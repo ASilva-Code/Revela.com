@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-main">
+
+    <header class="cabecalho">
+        <a href="main-olheiro.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main-olheiro.html" aria-current="page">Início</a></li>
+                <li><a href="talentos.html">Talentos</a></li>
+                <li><a href="peneiras-olheiro.html">Peneiras</a></li>
+                <li><a href="mensagens-olheiro.html">Mensagens</a></li>
+                <li><a href="perfil-olheiro.html">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <section class="boas-vindas">
+            <h1>Olá, <span id="nome-usuario">Rafael</span>!</h1>
+            <p class="texto-apoio">Olheiro · <span id="clube-usuario">Clube Atlético Aurora</span> · <span id="regiao-usuario">Campinas, SP</span></p>
+        </section>
+
+        <section class="resumo-numeros" aria-labelledby="titulo-numeros">
+            <h2 id="titulo-numeros">Resumo</h2>
+            <ul class="lista-numeros">
+                <li class="card numero">
+                    <strong>27</strong>
+                    <span>avaliações feitas</span>
+                </li>
+                <li class="card numero">
+                    <strong>2</strong>
+                    <span>peneiras abertas</span>
+                </li>
+                <li class="card numero">
+                    <strong>9</strong>
+                    <span>novos inscritos</span>
+                </li>
+                <li class="card numero">
+                    <strong>1</strong>
+                    <span>mensagem nova</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="secao" aria-labelledby="titulo-pendentes">
+            <h2 id="titulo-pendentes">Avaliações pendentes</h2>
+            <p class="texto-apoio">Atletas que participaram das suas peneiras e ainda não receberam nota.</p>
+
+            <ul class="lista-pendentes">
+                <li class="card item-pendente">
+                    <div>
+                        <h3>Pedro Santos</h3>
+                        <p class="card-info">Futebol · Zagueiro · 16 anos · Peneira Sub-17 de 18/10</p>
+                    </div>
+                    <a href="avaliar.html" class="botao botao-primario">Avaliar</a>
+                </li>
+                <li class="card item-pendente">
+                    <div>
+                        <h3>Mateus Oliveira</h3>
+                        <p class="card-info">Futebol · Atacante · 17 anos · Peneira Sub-17 de 18/10</p>
+                    </div>
+                    <a href="avaliar.html" class="botao botao-primario">Avaliar</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="secao" aria-labelledby="titulo-destaques">
+            <div class="secao-topo">
+                <h2 id="titulo-destaques">Talentos em destaque na sua região</h2>
+                <a href="talentos.html">Buscar talentos</a>
+            </div>
+
+            <div class="lista-cards">
+                <article class="card card-atleta">
+                    <img src="../img/avatar-padrao.svg" alt="Foto de Lucas Andrade" class="foto-pequena" width="56" height="56">
+                    <h3>Lucas Andrade</h3>
+                    <p class="card-info">Futebol · Meia · 16 anos · Campinas, SP</p>
+                    <p class="notas-atleta">OVR <strong>64</strong> · Potencial <strong>86</strong></p>
+                    <a href="atleta.html" class="botao botao-secundario">Ver perfil</a>
+                </article>
+
+                <article class="card card-atleta">
+                    <img src="../img/avatar-padrao.svg" alt="Foto de Beatriz Lima" class="foto-pequena" width="56" height="56">
+                    <h3>Beatriz Lima</h3>
+                    <p class="card-info">Vôlei · Levantadora · 15 anos · Valinhos, SP</p>
+                    <p class="notas-atleta">OVR <strong>66</strong> · Potencial <strong>89</strong></p>
+                    <a href="atleta.html" class="botao botao-secundario">Ver perfil</a>
+                </article>
+
+                <article class="card card-atleta">
+                    <img src="../img/avatar-padrao.svg" alt="Foto de Gabriel Costa" class="foto-pequena" width="56" height="56">
+                    <h3>Gabriel Costa</h3>
+                    <p class="card-info">Basquete · Ala · 17 anos · Jundiaí, SP</p>
+                    <p class="notas-atleta">OVR <strong>63</strong> · Potencial <strong>84</strong></p>
+                    <a href="atleta.html" class="botao botao-secundario">Ver perfil</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao" aria-labelledby="titulo-minhas-peneiras">
+            <div class="secao-topo">
+                <h2 id="titulo-minhas-peneiras">Próximas peneiras do clube</h2>
+                <a href="peneiras-olheiro.html">Gerenciar peneiras</a>
+            </div>
+
+            <div class="lista-cards">
+                <article class="card card-peneira">
+                    <p class="etiqueta">Futebol</p>
+                    <h3>Peneira Sub-17</h3>
+                    <ul class="card-info">
+                        <li>Data: <time datetime="2026-11-28">28/11/2026</time></li>
+                        <li>Inscritos: 28 de 40</li>
+                    </ul>
+                    <a href="inscritos.html" class="botao botao-primario">Ver inscritos</a>
+                </article>
+
+                <article class="card card-peneira">
+                    <p class="etiqueta">Futebol</p>
+                    <h3>Peneira Sub-15</h3>
+                    <ul class="card-info">
+                        <li>Data: <time datetime="2026-12-19">19/12/2026</time></li>
+                        <li>Inscritos: 11 de 40</li>
+                    </ul>
+                    <a href="inscritos.html" class="botao botao-primario">Ver inscritos</a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

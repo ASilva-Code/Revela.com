@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-perfil">
+
+    <header class="cabecalho">
+        <a href="main-olheiro.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main-olheiro.html">Início</a></li>
+                <li><a href="talentos.html">Talentos</a></li>
+                <li><a href="peneiras-olheiro.html">Peneiras</a></li>
+                <li><a href="mensagens-olheiro.html">Mensagens</a></li>
+                <li><a href="perfil-olheiro.html" aria-current="page">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <section class="perfil-topo card">
+            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Rafael Moura" class="foto-perfil" id="foto-perfil" width="120" height="120">
+
+            <div class="perfil-identificacao">
+                <h1 id="perfil-nome">Rafael Moura</h1>
+                <p class="texto-apoio"><span id="perfil-cargo">Olheiro</span> · <span id="perfil-clube">Clube Atlético Aurora</span></p>
+                <p class="texto-apoio">Região de atuação: <span id="perfil-regiao">Campinas, SP</span></p>
+                <ul class="lista-etiquetas" aria-label="Esportes que avalia">
+                    <li class="etiqueta">Futebol</li>
+                </ul>
+                <p class="selo-verificado">Vínculo com o clube verificado</p>
+            </div>
+
+            <form class="form-foto" action="perfil-olheiro.html">
+                <label for="trocar-foto" class="botao botao-secundario">Trocar foto</label>
+                <input type="file" id="trocar-foto" accept="image/*">
+            </form>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-sobre">
+            <h2 id="titulo-sobre">Sobre</h2>
+            <p>Trabalho há 8 anos com categorias de base. Procuro meias e atacantes de 14 a 17 anos com boa leitura de jogo para as equipes Sub-15 e Sub-17 do Aurora.</p>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-estatisticas">
+            <h2 id="titulo-estatisticas">Atividade no Revela.com</h2>
+            <dl class="lista-dados">
+                <dt>Avaliações feitas</dt>
+                <dd>27</dd>
+                <dt>Peneiras organizadas</dt>
+                <dd>5</dd>
+                <dt>Atletas encaminhados à base</dt>
+                <dd>4</dd>
+                <dt>Membro desde</dt>
+                <dd><time datetime="2026-03">Março de 2026</time></dd>
+            </dl>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-peneiras-org">
+            <h2 id="titulo-peneiras-org">Peneiras que organiza</h2>
+            <ul class="lista-simples">
+                <li><a href="inscritos.html">Peneira Sub-17</a> — <time datetime="2026-11-28">28/11/2026</time></li>
+                <li><a href="inscritos.html">Peneira Sub-15</a> — <time datetime="2026-12-19">19/12/2026</time></li>
+            </ul>
+            <a href="peneiras-olheiro.html" class="botao botao-secundario">Gerenciar peneiras</a>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-ultimas">
+            <h2 id="titulo-ultimas">Últimas avaliações</h2>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th scope="col">Atleta</th>
+                        <th scope="col">Esporte</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">OVR</th>
+                        <th scope="col">Potencial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="atleta.html">Lucas Andrade</a></td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-10-18">18/10/2026</time></td>
+                        <td>65</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td><a href="atleta.html">Caio Ribeiro</a></td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-10-18">18/10/2026</time></td>
+                        <td>61</td>
+                        <td>82</td>
+                    </tr>
+                    <tr>
+                        <td><a href="atleta.html">João Vitor Alves</a></td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-09-27">27/09/2026</time></td>
+                        <td>67</td>
+                        <td>90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

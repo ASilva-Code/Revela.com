@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliar atleta | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-avaliar">
+
+    <header class="cabecalho">
+        <a href="main-olheiro.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main-olheiro.html">Início</a></li>
+                <li><a href="talentos.html" aria-current="page">Talentos</a></li>
+                <li><a href="peneiras-olheiro.html">Peneiras</a></li>
+                <li><a href="mensagens-olheiro.html">Mensagens</a></li>
+                <li><a href="perfil-olheiro.html">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <p><a href="atleta.html" class="link-voltar">&larr; Voltar para o perfil do atleta</a></p>
+
+        <h1>Avaliar atleta</h1>
+
+        <section class="card atleta-resumo" aria-label="Atleta avaliado">
+            <img src="../img/avatar-padrao.svg" alt="Foto de Lucas Andrade" class="foto-pequena" width="56" height="56">
+            <div>
+                <h2>Lucas Andrade</h2>
+                <p class="card-info">16 anos · Campinas, SP · OVR atual <strong>64</strong> · Potencial atual <strong>86</strong></p>
+            </div>
+        </section>
+
+        <form id="form-avaliacao" class="card-formulario" action="atleta.html">
+
+            <fieldset class="grupo-campos">
+                <legend>Sobre a observação</legend>
+
+                <div class="campo">
+                    <label for="avaliacao-esporte">Esporte avaliado</label>
+                    <select id="avaliacao-esporte" required>
+                        <option value="futebol">Futebol</option>
+                        <option value="volei">Vôlei</option>
+                        <option value="basquete">Basquete</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="avaliacao-contexto">Onde você observou o atleta</label>
+                    <select id="avaliacao-contexto" required>
+                        <option value="">Selecione</option>
+                        <option value="peneira">Peneira</option>
+                        <option value="jogo">Jogo oficial</option>
+                        <option value="treino">Treino</option>
+                        <option value="video">Vídeo</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="avaliacao-data">Data da observação</label>
+                    <input type="date" id="avaliacao-data" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos bloco-esporte" id="atributos-futebol">
+                <legend>Atributos de futebol (0 a 70)</legend>
+
+                <div class="campo">
+                    <label for="nota-ritmo">Ritmo</label>
+                    <input type="number" id="nota-ritmo" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-finalizacao">Finalização</label>
+                    <input type="number" id="nota-finalizacao" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-passe">Passe</label>
+                    <input type="number" id="nota-passe" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-drible">Drible</label>
+                    <input type="number" id="nota-drible" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-defesa-futebol">Defesa</label>
+                    <input type="number" id="nota-defesa-futebol" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-fisico-futebol">Físico</label>
+                    <input type="number" id="nota-fisico-futebol" class="nota-atributo" min="0" max="70">
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos bloco-esporte" id="atributos-volei">
+                <legend>Atributos de vôlei (0 a 70)</legend>
+
+                <div class="campo">
+                    <label for="nota-saque">Saque</label>
+                    <input type="number" id="nota-saque" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-recepcao">Recepção</label>
+                    <input type="number" id="nota-recepcao" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-ataque">Ataque</label>
+                    <input type="number" id="nota-ataque" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-bloqueio">Bloqueio</label>
+                    <input type="number" id="nota-bloqueio" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-levantamento">Levantamento</label>
+                    <input type="number" id="nota-levantamento" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-fisico-volei">Físico</label>
+                    <input type="number" id="nota-fisico-volei" class="nota-atributo" min="0" max="70">
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos bloco-esporte" id="atributos-basquete">
+                <legend>Atributos de basquete (0 a 70)</legend>
+
+                <div class="campo">
+                    <label for="nota-arremesso">Arremesso</label>
+                    <input type="number" id="nota-arremesso" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-passe-basquete">Passe</label>
+                    <input type="number" id="nota-passe-basquete" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-drible-basquete">Drible</label>
+                    <input type="number" id="nota-drible-basquete" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-defesa-basquete">Defesa</label>
+                    <input type="number" id="nota-defesa-basquete" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-rebote">Rebote</label>
+                    <input type="number" id="nota-rebote" class="nota-atributo" min="0" max="70">
+                </div>
+                <div class="campo">
+                    <label for="nota-fisico-basquete">Físico</label>
+                    <input type="number" id="nota-fisico-basquete" class="nota-atributo" min="0" max="70">
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos">
+                <legend>Resultado</legend>
+
+                <div class="campo">
+                    <label for="ovr-calculado">Overall (OVR) — média dos atributos</label>
+                    <output id="ovr-calculado" for="form-avaliacao">—</output>
+                </div>
+
+                <div class="campo">
+                    <label for="nota-potencial">Potencial (0 a 100)</label>
+                    <input type="number" id="nota-potencial" min="0" max="100" required>
+                </div>
+
+                <div class="campo">
+                    <label for="avaliacao-comentario">Comentário para o atleta</label>
+                    <textarea id="avaliacao-comentario" rows="4" placeholder="Pontos fortes e o que ele pode melhorar." required></textarea>
+                </div>
+            </fieldset>
+
+            <div class="acoes-formulario">
+                <a href="atleta.html" class="botao botao-secundario">Cancelar</a>
+                <button type="submit" class="botao botao-primario">Salvar avaliação</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

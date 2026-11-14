@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-mensagens">
+
+    <header class="cabecalho">
+        <a href="main-olheiro.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main-olheiro.html">Início</a></li>
+                <li><a href="talentos.html">Talentos</a></li>
+                <li><a href="peneiras-olheiro.html">Peneiras</a></li>
+                <li><a href="mensagens-olheiro.html" aria-current="page">Mensagens</a></li>
+                <li><a href="perfil-olheiro.html">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo mensagens-layout">
+
+        <h1>Mensagens</h1>
+
+        <aside class="lista-conversas card" aria-labelledby="titulo-conversas">
+            <h2 id="titulo-conversas">Conversas</h2>
+            <ul>
+                <li>
+                    <a href="#conversa-ativa" class="conversa conversa-ativa" aria-current="true">
+                        <strong>Lucas Andrade</strong>
+                        <span>Futebol · Meia · 16 anos</span>
+                        <span class="conversa-previa">Muito obrigado pelo convite!</span>
+                        <span class="selo-novo">1 nova</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#conversa-ativa" class="conversa">
+                        <strong>João Vitor Alves</strong>
+                        <span>Futebol · Atacante · 17 anos</span>
+                        <span class="conversa-previa">Confirmado para o dia 28!</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#conversa-ativa" class="conversa">
+                        <strong>Pedro Santos</strong>
+                        <span>Futebol · Zagueiro · 16 anos</span>
+                        <span class="conversa-previa">Quando sai o resultado?</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="conversa-aberta card" id="conversa-ativa" aria-labelledby="titulo-conversa">
+            <header class="conversa-topo">
+                <img src="../img/avatar-padrao.svg" alt="Foto de Lucas Andrade" class="foto-pequena" width="56" height="56">
+                <div>
+                    <h2 id="titulo-conversa">Lucas Andrade</h2>
+                    <p class="texto-apoio">Responsável em cópia: Ana Andrade (mãe)</p>
+                </div>
+                <a href="atleta.html" class="botao botao-secundario">Ver perfil</a>
+            </header>
+
+            <ol class="lista-mensagens">
+                <li class="mensagem mensagem-enviada">
+                    <p>Oi, Lucas! Vi sua avaliação no Revela.com e gostei bastante do seu passe. Queremos ver você jogando de perto.</p>
+                    <p class="mensagem-hora"><time datetime="2026-11-12T14:05">12/11 às 14:05</time></p>
+                </li>
+
+                <li class="mensagem mensagem-enviada">
+                    <article class="card-convite">
+                        <h3>Convite: Peneira Sub-17</h3>
+                        <p>Clube Atlético Aurora · <time datetime="2026-11-28">28/11/2026</time> · Campinas, SP</p>
+                        <a href="inscritos.html" class="botao botao-secundario">Ver inscritos</a>
+                    </article>
+                    <p class="mensagem-hora"><time datetime="2026-11-12T14:06">12/11 às 14:06</time></p>
+                </li>
+
+                <li class="mensagem mensagem-recebida">
+                    <p>Muito obrigado pelo convite! Vou conversar com minha mãe e confirmo ainda hoje.</p>
+                    <p class="mensagem-hora"><time datetime="2026-11-12T18:30">12/11 às 18:30</time></p>
+                </li>
+            </ol>
+
+            <form id="form-mensagem" class="form-mensagem" action="mensagens-olheiro.html">
+                <div class="campo">
+                    <label for="anexar-convite">Anexar convite (opcional)</label>
+                    <select id="anexar-convite">
+                        <option value="">Nenhum</option>
+                        <option value="sub17">Peneira Sub-17 — 28/11/2026</option>
+                        <option value="sub15">Peneira Sub-15 — 19/12/2026</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="texto-mensagem">Sua mensagem</label>
+                    <textarea id="texto-mensagem" rows="3" placeholder="Escreva sua mensagem..." required></textarea>
+                </div>
+
+                <button type="submit" class="botao botao-primario">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

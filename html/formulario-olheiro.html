@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de olheiro | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-formulario">
+
+    <header class="cabecalho-simples">
+        <p class="logo">Revela.com</p>
+    </header>
+
+    <main class="formulario-conteudo">
+
+        <h1>Complete seu cadastro</h1>
+        <p class="texto-apoio">Seu vínculo com o clube aparece no seu perfil e dá mais confiança aos atletas.</p>
+
+        <nav class="seletor-tipo" aria-label="Tipo de conta">
+            <h2>Tipo de conta</h2>
+            <ul>
+                <li><a href="formulario.html" class="opcao-tipo">Sou Talento <span>Quero ser descoberto</span></a></li>
+                <li><a href="formulario-olheiro.html" class="opcao-tipo ativa" aria-current="page">Sou Olheiro <span>Quero descobrir talentos</span></a></li>
+            </ul>
+        </nav>
+
+        <form id="form-olheiro" class="card-formulario" action="main-olheiro.html">
+
+            <fieldset class="grupo-campos">
+                <legend>Vínculo profissional</legend>
+
+                <div class="campo">
+                    <label for="clube">Clube ou time vinculado</label>
+                    <input type="text" id="clube" placeholder="Ex.: Esporte Clube Exemplo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cargo">Cargo</label>
+                    <select id="cargo" required>
+                        <option value="">Selecione</option>
+                        <option value="olheiro">Olheiro</option>
+                        <option value="coordenador">Coordenador das categorias de base</option>
+                        <option value="treinador">Treinador</option>
+                        <option value="preparador">Preparador físico</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="experiencia">Tempo de experiência</label>
+                    <select id="experiencia" required>
+                        <option value="">Selecione</option>
+                        <option value="0">Menos de 1 ano</option>
+                        <option value="1">1 a 3 anos</option>
+                        <option value="4">4 a 10 anos</option>
+                        <option value="11">Mais de 10 anos</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="email-clube">E-mail profissional (opcional)</label>
+                    <input type="email" id="email-clube" placeholder="nome@clube.com.br">
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos">
+                <legend>Esportes que você avalia</legend>
+                <p class="dica-campo">Marque um ou mais.</p>
+
+                <div class="opcao-check">
+                    <input type="checkbox" id="esporte-futebol" value="futebol">
+                    <label for="esporte-futebol">Futebol</label>
+                </div>
+                <div class="opcao-check">
+                    <input type="checkbox" id="esporte-volei" value="volei">
+                    <label for="esporte-volei">Vôlei</label>
+                </div>
+                <div class="opcao-check">
+                    <input type="checkbox" id="esporte-basquete" value="basquete">
+                    <label for="esporte-basquete">Basquete</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-campos">
+                <legend>Região de atuação</legend>
+
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <select id="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" autocomplete="address-level2" required>
+                </div>
+            </fieldset>
+
+            <div class="acoes-formulario">
+                <a href="login.html" class="botao botao-secundario">Voltar</a>
+                <button type="submit" class="botao botao-primario">Concluir cadastro</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

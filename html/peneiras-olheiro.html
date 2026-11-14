@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas peneiras | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-peneiras">
+
+    <header class="cabecalho">
+        <a href="main-olheiro.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main-olheiro.html">Início</a></li>
+                <li><a href="talentos.html">Talentos</a></li>
+                <li><a href="peneiras-olheiro.html" aria-current="page">Peneiras</a></li>
+                <li><a href="mensagens-olheiro.html">Mensagens</a></li>
+                <li><a href="perfil-olheiro.html">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <h1>Peneiras do Clube Atlético Aurora</h1>
+        <p class="texto-apoio">Acompanhe as inscrições e cadastre novas peneiras.</p>
+
+        <section class="card" aria-labelledby="titulo-lista">
+            <h2 id="titulo-lista">Peneiras cadastradas</h2>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th scope="col">Peneira</th>
+                        <th scope="col">Esporte</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Inscritos</th>
+                        <th scope="col">Situação</th>
+                        <th scope="col"><span class="texto-leitor">Ações</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Peneira Sub-17</td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-11-28">28/11/2026</time></td>
+                        <td>28 de 40</td>
+                        <td><span class="status status-aprovado">Inscrições abertas</span></td>
+                        <td><a href="inscritos.html">Ver inscritos</a></td>
+                    </tr>
+                    <tr>
+                        <td>Peneira Sub-15</td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-12-19">19/12/2026</time></td>
+                        <td>11 de 40</td>
+                        <td><span class="status status-aprovado">Inscrições abertas</span></td>
+                        <td><a href="inscritos.html">Ver inscritos</a></td>
+                    </tr>
+                    <tr>
+                        <td>Peneira Sub-17</td>
+                        <td>Futebol</td>
+                        <td><time datetime="2026-10-18">18/10/2026</time></td>
+                        <td>40 de 40</td>
+                        <td><span class="status status-analise">Encerrada</span></td>
+                        <td><a href="inscritos.html">Ver resultados</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section aria-labelledby="titulo-nova">
+            <h2 id="titulo-nova">Cadastrar nova peneira</h2>
+
+            <form id="form-nova-peneira" class="card-formulario" action="peneiras-olheiro.html">
+
+                <fieldset class="grupo-campos">
+                    <legend>Informações gerais</legend>
+
+                    <div class="campo">
+                        <label for="peneira-nome">Nome da peneira</label>
+                        <input type="text" id="peneira-nome" placeholder="Ex.: Peneira Sub-17" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-esporte">Esporte</label>
+                        <select id="peneira-esporte" required>
+                            <option value="">Selecione</option>
+                            <option value="futebol">Futebol</option>
+                            <option value="volei">Vôlei</option>
+                            <option value="basquete">Basquete</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-posicoes">Posições avaliadas</label>
+                        <input type="text" id="peneira-posicoes" placeholder="Ex.: Todas, exceto goleiro">
+                    </div>
+                </fieldset>
+
+                <fieldset class="grupo-campos">
+                    <legend>Data e local</legend>
+
+                    <div class="campo">
+                        <label for="peneira-data">Data</label>
+                        <input type="date" id="peneira-data" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-inicio">Horário de início</label>
+                        <input type="time" id="peneira-inicio" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-fim">Horário de término</label>
+                        <input type="time" id="peneira-fim">
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-endereco">Endereço</label>
+                        <input type="text" id="peneira-endereco" placeholder="Rua, número e bairro" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-cidade">Cidade</label>
+                        <input type="text" id="peneira-cidade" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="grupo-campos">
+                    <legend>Participantes</legend>
+
+                    <div class="campo">
+                        <label for="peneira-idade-min">Idade mínima</label>
+                        <input type="number" id="peneira-idade-min" min="10" max="21" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-idade-max">Idade máxima</label>
+                        <input type="number" id="peneira-idade-max" min="10" max="21" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-vagas">Número de vagas</label>
+                        <input type="number" id="peneira-vagas" min="1" max="500" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="grupo-campos">
+                    <legend>Orientações</legend>
+
+                    <div class="campo">
+                        <label for="peneira-levar">O que levar</label>
+                        <textarea id="peneira-levar" rows="3" placeholder="Ex.: documento com foto, chuteira, água"></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="peneira-descricao">Como vai funcionar</label>
+                        <textarea id="peneira-descricao" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="acoes-formulario">
+                    <button type="reset" class="botao botao-secundario">Limpar</button>
+                    <button type="submit" class="botao botao-primario">Publicar peneira</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

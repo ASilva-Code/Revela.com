@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peneira Sub-17 | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-peneira-detalhe">
+
+    <header class="cabecalho">
+        <a href="main.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main.html">Início</a></li>
+                <li><a href="peneiras.html" aria-current="page">Peneiras</a></li>
+                <li><a href="mensagens.html">Mensagens</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <p><a href="peneiras.html" class="link-voltar">&larr; Voltar para peneiras</a></p>
+
+        <article class="detalhe-peneira">
+
+            <header class="card detalhe-topo">
+                <p class="etiqueta">Futebol</p>
+                <h1>Peneira Sub-17</h1>
+                <p class="card-clube">Clube Atlético Aurora</p>
+            </header>
+
+            <section class="card" aria-labelledby="titulo-informacoes">
+                <h2 id="titulo-informacoes">Informações</h2>
+
+                <dl class="lista-dados">
+                    <dt>Data</dt>
+                    <dd><time datetime="2026-11-28">Sábado, 28/11/2026</time></dd>
+                    <dt>Horário</dt>
+                    <dd><time datetime="08:00">8h</time> às <time datetime="12:00">12h</time> (chegar 30 minutos antes)</dd>
+                    <dt>Local</dt>
+                    <dd>Centro de Treinamento Aurora — Rua das Palmeiras, 450, Campinas, SP</dd>
+                    <dt>Idade</dt>
+                    <dd>Nascidos entre 2009 e 2011 (15 a 17 anos)</dd>
+                    <dt>Posições avaliadas</dt>
+                    <dd>Todas, exceto goleiro</dd>
+                    <dt>Vagas</dt>
+                    <dd><strong>12</strong> restantes de 40</dd>
+                    <dt>Custo</dt>
+                    <dd>Gratuito</dd>
+                </dl>
+            </section>
+
+            <section class="card" aria-labelledby="titulo-levar">
+                <h2 id="titulo-levar">O que levar</h2>
+                <ul>
+                    <li>Documento com foto (RG ou certidão de nascimento)</li>
+                    <li>Chuteira, caneleira e roupa de treino</li>
+                    <li>Garrafa de água</li>
+                    <li>Autorização assinada pelo responsável (menores de 18 anos)</li>
+                </ul>
+            </section>
+
+            <section class="card" aria-labelledby="titulo-como-funciona">
+                <h2 id="titulo-como-funciona">Como funciona</h2>
+                <ol>
+                    <li>Aquecimento e testes físicos (velocidade e resistência).</li>
+                    <li>Exercícios técnicos de passe, domínio e finalização.</li>
+                    <li>Jogo-treino em campo reduzido.</li>
+                    <li>Os aprovados recebem convite pelo Revela.com em até 10 dias.</li>
+                </ol>
+            </section>
+
+            <aside class="card organizador" aria-labelledby="titulo-organizador">
+                <h2 id="titulo-organizador">Organizado por</h2>
+                <img src="../img/avatar-padrao.svg" alt="Foto de Rafael Moura" class="foto-pequena" width="56" height="56">
+                <p><strong>Rafael Moura</strong><br>Olheiro · Clube Atlético Aurora</p>
+                <a href="mensagens.html" class="botao botao-secundario">Enviar mensagem</a>
+            </aside>
+
+            <section class="card inscricao" aria-labelledby="titulo-inscricao">
+                <h2 id="titulo-inscricao">Garantir minha vaga</h2>
+
+                <form id="form-inscricao" action="peneiras.html">
+                    <div class="opcao-check">
+                        <input type="checkbox" id="confirma-requisitos" required>
+                        <label for="confirma-requisitos">Li as informações e cumpro os requisitos de idade.</label>
+                    </div>
+
+                    <div class="opcao-check">
+                        <input type="checkbox" id="confirma-responsavel">
+                        <label for="confirma-responsavel">Meu responsável está ciente da inscrição (obrigatório para menores de 18 anos).</label>
+                    </div>
+
+                    <button type="submit" class="botao botao-primario" id="botao-inscrever">Garantir vaga</button>
+                </form>
+
+                <p class="texto-apoio" id="status-inscricao">Você ainda não está inscrito nesta peneira.</p>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

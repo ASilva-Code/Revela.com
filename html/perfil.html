@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-perfil">
+
+    <header class="cabecalho">
+        <a href="main.html" class="logo">Revela.com</a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="main.html">Início</a></li>
+                <li><a href="peneiras.html">Peneiras</a></li>
+                <li><a href="mensagens.html">Mensagens</a></li>
+                <li><a href="perfil.html" aria-current="page">Perfil</a></li>
+                <li><a href="login.html" class="link-sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+
+        <section class="perfil-topo card">
+            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Lucas Andrade" class="foto-perfil" id="foto-perfil" width="120" height="120">
+
+            <div class="perfil-identificacao">
+                <h1 id="perfil-nome">Lucas Andrade</h1>
+                <p class="texto-apoio"><span id="perfil-idade">16 anos</span> · <span id="perfil-regiao">Campinas, SP</span></p>
+                <ul class="lista-etiquetas" aria-label="Esportes">
+                    <li class="etiqueta">Futebol · Meia</li>
+                    <li class="etiqueta">Vôlei · Ponteiro</li>
+                </ul>
+            </div>
+
+            <form class="form-foto" action="perfil.html">
+                <label for="trocar-foto" class="botao botao-secundario">Trocar foto</label>
+                <input type="file" id="trocar-foto" accept="image/*">
+            </form>
+        </section>
+
+        <section class="perfil-notas card" aria-labelledby="titulo-notas">
+            <h2 id="titulo-notas">Notas dos olheiros</h2>
+
+            <div class="nota nota-destaque">
+                <label for="perfil-ovr">Overall (OVR)</label>
+                <meter id="perfil-ovr" min="0" max="70" value="64">64 de 70</meter>
+                <p class="valor-nota"><strong>64</strong> / 70</p>
+            </div>
+
+            <div class="nota nota-destaque">
+                <label for="perfil-potencial">Potencial</label>
+                <meter id="perfil-potencial" min="0" max="100" value="86">86 de 100</meter>
+                <p class="valor-nota"><strong>86</strong> / 100</p>
+            </div>
+
+            <p class="texto-apoio">Média de 4 avaliações. O OVR vai de 0 a 70 e o Potencial de 0 a 100.</p>
+        </section>
+
+        <section class="perfil-atributos card" aria-labelledby="titulo-atributos">
+            <h2 id="titulo-atributos">Atributos — Futebol</h2>
+
+            <ul class="lista-atributos">
+                <li>
+                    <label for="attr-ritmo">Ritmo</label>
+                    <meter id="attr-ritmo" min="0" max="70" value="66">66</meter>
+                    <span class="valor-atributo">66</span>
+                </li>
+                <li>
+                    <label for="attr-finalizacao">Finalização</label>
+                    <meter id="attr-finalizacao" min="0" max="70" value="61">61</meter>
+                    <span class="valor-atributo">61</span>
+                </li>
+                <li>
+                    <label for="attr-passe">Passe</label>
+                    <meter id="attr-passe" min="0" max="70" value="68">68</meter>
+                    <span class="valor-atributo">68</span>
+                </li>
+                <li>
+                    <label for="attr-drible">Drible</label>
+                    <meter id="attr-drible" min="0" max="70" value="67">67</meter>
+                    <span class="valor-atributo">67</span>
+                </li>
+                <li>
+                    <label for="attr-defesa">Defesa</label>
+                    <meter id="attr-defesa" min="0" max="70" value="58">58</meter>
+                    <span class="valor-atributo">58</span>
+                </li>
+                <li>
+                    <label for="attr-fisico">Físico</label>
+                    <meter id="attr-fisico" min="0" max="70" value="62">62</meter>
+                    <span class="valor-atributo">62</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="perfil-dados card" aria-labelledby="titulo-dados">
+            <h2 id="titulo-dados">Dados esportivos</h2>
+
+            <dl class="lista-dados">
+                <dt>Posição principal</dt>
+                <dd>Meia</dd>
+                <dt>Pé dominante</dt>
+                <dd>Direito</dd>
+                <dt>Altura</dt>
+                <dd>1,74 m</dd>
+                <dt>Peso</dt>
+                <dd>64 kg</dd>
+                <dt>Tempo de prática</dt>
+                <dd>Futebol: 3 a 5 anos · Vôlei: 1 a 2 anos</dd>
+            </dl>
+        </section>
+
+        <section class="perfil-galeria card" aria-labelledby="titulo-galeria">
+            <h2 id="titulo-galeria">Fotos</h2>
+
+            <div class="galeria">
+                <figure>
+                    <img src="../img/foto-placeholder.svg" alt="Lucas conduzindo a bola em jogo da escola" width="160" height="120">
+                    <figcaption>Final do torneio escolar</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img/foto-placeholder.svg" alt="Lucas com o time após o jogo" width="160" height="120">
+                    <figcaption>Time do bairro, 2026</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img/foto-placeholder.svg" alt="Lucas em treino de vôlei" width="160" height="120">
+                    <figcaption>Treino de vôlei</figcaption>
+                </figure>
+            </div>
+
+            <form class="form-galeria" action="perfil.html">
+                <label for="adicionar-fotos">Adicionar fotos</label>
+                <input type="file" id="adicionar-fotos" accept="image/*" multiple>
+                <button type="submit" class="botao botao-secundario">Enviar fotos</button>
+            </form>
+        </section>
+
+        <section class="perfil-avaliacoes" aria-labelledby="titulo-avaliacoes">
+            <h2 id="titulo-avaliacoes">Avaliações recebidas</h2>
+
+            <article class="card card-avaliacao">
+                <h3>Rafael Moura</h3>
+                <p class="card-clube">Olheiro · Clube Atlético Aurora</p>
+                <p class="card-info">
+                    <time datetime="2026-10-18">18/10/2026</time> ·
+                    OVR <strong>65</strong> · Potencial <strong>88</strong>
+                </p>
+                <blockquote>
+                    <p>Ótima visão de jogo e passe curto muito preciso. Precisa ganhar força para as disputas de corpo.</p>
+                </blockquote>
+            </article>
+
+            <article class="card card-avaliacao">
+                <h3>Juliana Prado</h3>
+                <p class="card-clube">Coordenadora da base · Esporte Clube Horizonte</p>
+                <p class="card-info">
+                    <time datetime="2026-09-02">02/09/2026</time> ·
+                    OVR <strong>63</strong> · Potencial <strong>85</strong>
+                </p>
+                <blockquote>
+                    <p>Bom drible em espaço curto. Deve melhorar o posicionamento defensivo quando perde a bola.</p>
+                </blockquote>
+            </article>
+        </section>
+
+        <section class="perfil-historico card" aria-labelledby="titulo-historico">
+            <h2 id="titulo-historico">Histórico de peneiras</h2>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th scope="col">Peneira</th>
+                        <th scope="col">Clube</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Desempenho</th>
+                        <th scope="col">Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Peneira Sub-17</td>
+                        <td>Clube Atlético Aurora</td>
+                        <td><time datetime="2026-10-18">18/10/2026</time></td>
+                        <td>65</td>
+                        <td><span class="status status-aprovado">Aprovado para 2ª fase</span></td>
+                    </tr>
+                    <tr>
+                        <td>Avaliação aberta Sub-15</td>
+                        <td>Esporte Clube Horizonte</td>
+                        <td><time datetime="2026-09-02">02/09/2026</time></td>
+                        <td>63</td>
+                        <td><span class="status status-analise">Em análise</span></td>
+                    </tr>
+                    <tr>
+                        <td>Seletiva regional</td>
+                        <td>Associação Esportiva Ribeirão</td>
+                        <td><time datetime="2026-05-20">20/05/2026</time></td>
+                        <td>59</td>
+                        <td><span class="status status-reprovado">Não aprovado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>

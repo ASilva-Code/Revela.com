@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Revela.com</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/telas.css">
+</head>
+<body class="pagina-login">
+
+    <header class="cabecalho-login">
+        <h1 class="logo">Revela.com</h1>
+        <p class="slogan">Seu talento merece ser visto.</p>
+    </header>
+
+    <main class="login-conteudo">
+
+        <section class="login-apresentacao">
+            <h2>Conectamos jovens atletas a olheiros e clubes</h2>
+            <ul class="lista-beneficios">
+                <li>Encontre peneiras abertas perto de você.</li>
+                <li>Receba avaliações de olheiros e acompanhe seu Overall e seu Potencial.</li>
+                <li>Seja convidado para testes e categorias de base.</li>
+            </ul>
+        </section>
+
+        <section class="card-formulario" id="secao-entrar">
+            <h2>Entrar</h2>
+            <form id="form-entrar" action="main.html">
+                <div class="campo">
+                    <label for="entrar-email">E-mail</label>
+                    <input type="email" id="entrar-email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="entrar-senha">Senha</label>
+                    <input type="password" id="entrar-senha" autocomplete="current-password" required>
+                </div>
+
+                <button type="submit" class="botao botao-primario">Entrar</button>
+            </form>
+            <p class="texto-apoio">Ainda não tem conta? <a href="#secao-cadastrar">Crie a sua</a></p>
+        </section>
+
+        <section class="card-formulario" id="secao-cadastrar">
+            <h2>Criar conta</h2>
+            <form id="form-cadastrar" action="formulario.html">
+                <div class="campo">
+                    <label for="cadastro-nome">Nome completo</label>
+                    <input type="text" id="cadastro-nome" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cadastro-nascimento">Data de nascimento</label>
+                    <input type="date" id="cadastro-nascimento" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cadastro-email">E-mail</label>
+                    <input type="email" id="cadastro-email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cadastro-senha">Senha</label>
+                    <input type="password" id="cadastro-senha" minlength="6" autocomplete="new-password" aria-describedby="dica-senha" required>
+                    <small id="dica-senha" class="dica-campo">Mínimo de 6 caracteres.</small>
+                </div>
+
+                <button type="submit" class="botao botao-secundario">Criar conta</button>
+            </form>
+            <p class="texto-apoio">Já tem conta? <a href="#secao-entrar">Entrar</a></p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Revela.com — Projeto acadêmico</p>
+    </footer>
+
+</body>
+</html>
