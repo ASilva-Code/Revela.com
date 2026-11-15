@@ -1,0 +1,599 @@
+/* =========================================================
+   Revela.com — telas.css
+   Ajustes específicos de cada tela.
+   ========================================================= */
+
+/* =================== LOGIN =================== */
+.cabecalho-login {
+    background-color: var(--verde);
+    color: var(--branco);
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.cabecalho-login .logo {
+    color: var(--branco);
+    font-size: 2rem;
+}
+
+.slogan {
+    opacity: 0.9;
+}
+
+.login-conteudo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.login-apresentacao {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-beneficios li {
+    background-color: var(--branco);
+    border-left: 4px solid var(--verde);
+    border-radius: var(--raio);
+    padding: 12px 16px;
+}
+
+.pagina-login .card-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pagina-login .card-formulario .botao {
+    width: 100%;
+}
+
+.texto-apoio a {
+    font-weight: 600;
+}
+
+/* =================== FORMULÁRIOS DE CADASTRO =================== */
+.formulario-conteudo {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.seletor-tipo h2 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.seletor-tipo ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.opcao-tipo {
+    display: block;
+    height: 100%;
+    background-color: var(--branco);
+    border: 2px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 16px;
+    color: var(--texto);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.opcao-tipo span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.opcao-tipo:hover {
+    border-color: var(--verde);
+    color: var(--texto);
+}
+
+/* Tipo de conta escolhido */
+.opcao-tipo.ativa {
+    border-color: var(--verde);
+    background-color: var(--verde-claro);
+    color: var(--verde);
+}
+
+/* Bloco de cada esporte dentro do formulário */
+.bloco-esporte {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    background-color: var(--fundo);
+    border-radius: var(--raio);
+    padding: 16px;
+}
+
+/* =================== INÍCIO (talento e olheiro) =================== */
+.boas-vindas {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.aviso {
+    background-color: var(--verde-claro);
+    border-color: var(--verde);
+}
+
+.lista-noticias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.noticia {
+    background-color: var(--branco);
+    border-radius: var(--raio);
+    border: 1px solid var(--borda);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.noticia-data {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+.card-dica {
+    border-top: 4px solid var(--verde);
+}
+
+/* Números de resumo do olheiro */
+.resumo-numeros {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-numeros {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.numero {
+    gap: 0;
+}
+
+.numero strong {
+    font-size: 2rem;
+    color: var(--verde);
+    line-height: 1.1;
+}
+
+.numero span {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* Lista de avaliações pendentes e de inscrições */
+.lista-pendentes,
+.lista-inscricoes {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-pendente,
+.card-inscricao {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .item-pendente .botao,
+.item-pendente .botao {
+    align-self: center;
+}
+
+/* =================== PERFIL / ATLETA =================== */
+.pagina-perfil .conteudo {
+    max-width: 900px;
+}
+
+.perfil-topo {
+    align-items: center;
+    text-align: center;
+}
+
+.perfil-identificacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.perfil-identificacao .etiqueta {
+    align-self: auto;
+}
+
+.perfil-topo .botao {
+    align-self: center;
+}
+
+/* Esconde o campo de arquivo; o <label> faz o papel de botão */
+.form-foto input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.acoes-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.perfil-notas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.nota-destaque .valor-nota strong {
+    font-size: 2rem;
+}
+
+.perfil-avaliacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Galeria de fotos */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: var(--raio);
+}
+
+.galeria figcaption {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin-top: 4px;
+}
+
+.form-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-galeria label {
+    font-weight: 600;
+}
+
+.form-galeria .botao {
+    align-self: flex-start;
+}
+
+/* Card de talento (busca e destaques) */
+.card-atleta .foto-pequena {
+    width: 72px;
+    height: 72px;
+}
+
+/* =================== PENEIRAS =================== */
+.form-busca {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.form-busca .botao {
+    align-self: end;
+}
+
+.detalhe-peneira {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detalhe-peneira ul,
+.detalhe-peneira ol {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.organizador .foto-pequena {
+    width: 64px;
+    height: 64px;
+}
+
+/* Destaque para o bloco de inscrição */
+.inscricao {
+    border: 2px solid var(--verde);
+}
+
+.inscricao form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inscricao .opcao-check {
+    align-items: flex-start;
+}
+
+/* =================== MENSAGENS =================== */
+.mensagens-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.lista-conversas ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conversa {
+    display: block;
+    padding: 12px;
+    border-radius: var(--raio);
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.conversa span {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+}
+
+.conversa .selo-novo {
+    display: inline-block;
+    color: var(--branco);
+    margin-top: 4px;
+}
+
+.conversa:hover {
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+.conversa-ativa {
+    background-color: var(--verde-claro);
+}
+
+.conversa-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.conversa-topo .botao {
+    margin-left: auto;
+    align-self: center;
+}
+
+.lista-mensagens {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mensagem {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.mensagem-recebida {
+    align-self: flex-start;
+    background-color: var(--fundo);
+}
+
+.mensagem-enviada {
+    align-self: flex-end;
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.mensagem-hora {
+    font-size: 0.75rem;
+    opacity: 0.75;
+    margin-top: 4px;
+}
+
+/* Convite dentro da conversa */
+.card-convite {
+    background-color: var(--branco);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-convite .botao {
+    align-self: flex-start;
+}
+
+.form-mensagem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--borda);
+    padding-top: 12px;
+}
+
+.form-mensagem > label {
+    font-weight: 600;
+}
+
+.form-mensagem .botao {
+    align-self: flex-end;
+}
+
+/* =================== AVALIAR =================== */
+.atleta-resumo {
+    flex-direction: row;
+    align-items: center;
+}
+
+#ovr-calculado {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+/* =================== INSCRITOS =================== */
+.pagina-inscritos .tabela input[type="number"] {
+    width: 80px;
+}
+
+.pagina-inscritos .tabela select {
+    width: auto;
+}
+
+.pagina-inscritos .tabela input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--verde);
+}
+
+#form-resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =================== TELAS MAIORES =================== */
+@media (min-width: 768px) {
+    /* Login: apresentação + dois formulários lado a lado */
+    .login-conteudo {
+        grid-template-columns: 1fr 1fr;
+        padding: 48px 32px 64px;
+    }
+
+    .login-apresentacao {
+        grid-column: 1 / 3;
+    }
+
+    .bloco-esporte {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bloco-esporte h3,
+    .bloco-esporte legend {
+        grid-column: 1 / 3;
+    }
+
+    .lista-noticias {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lista-numeros {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Perfil: foto à esquerda, dados no meio, botão à direita */
+    .perfil-topo {
+        flex-direction: row;
+        text-align: left;
+        gap: 24px;
+    }
+
+    .perfil-identificacao {
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .perfil-notas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .perfil-notas h2,
+    .perfil-notas > p {
+        grid-column: 1 / 3;
+    }
+
+    .acoes-perfil {
+        flex-direction: column;
+    }
+
+    .form-busca {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Mensagens: lista de conversas à esquerda, conversa à direita */
+    .mensagens-layout {
+        grid-template-columns: 300px 1fr;
+        align-items: start;
+    }
+
+    .mensagens-layout h1 {
+        grid-column: 1 / 3;
+    }
+
+    .mensagem {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Login: os três blocos lado a lado */
+    .login-conteudo {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        align-items: start;
+    }
+
+    .login-apresentacao {
+        grid-column: auto;
+    }
+}

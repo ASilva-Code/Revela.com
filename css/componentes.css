@@ -1,0 +1,519 @@
+/* =========================================================
+   Revela.com — componentes.css
+   Peças que se repetem em várias telas.
+   ========================================================= */
+
+/* ---------- Cabeçalho com menu (telas logadas) ---------- */
+.cabecalho {
+    background-color: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--verde);
+    text-decoration: none;
+}
+
+.menu-principal ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.menu-principal a {
+    display: block;
+    padding: 6px 12px;
+    border-radius: var(--raio);
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu-principal a:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde);
+}
+
+/* Página atual no menu */
+.menu-principal a[aria-current="page"] {
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.menu-principal .link-sair {
+    color: var(--texto-suave);
+}
+
+/* Cabeçalho sem menu (formulários de cadastro) */
+.cabecalho-simples {
+    background-color: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 16px;
+    text-align: center;
+}
+
+/* ---------- Área de conteúdo ---------- */
+.conteudo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.secao {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.secao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.texto-apoio {
+    color: var(--texto-suave);
+}
+
+.link-voltar {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    background-color: var(--verde);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px 16px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Sem isso, um conteúdo largo (como uma tabela) estica o card
+   e a página inteira passa a rolar para o lado no celular. */
+.secao,
+.card,
+.card > *,
+.card-formulario {
+    min-width: 0;
+}
+
+/* Grade de cards: 1 coluna no celular, várias no computador */
+.lista-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.card-clube {
+    font-weight: 600;
+    color: var(--texto-suave);
+}
+
+.card-info {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+ul.card-info {
+    list-style: none;
+    padding: 0;
+}
+
+/* Botão do card não ocupa a largura toda */
+.card .botao {
+    align-self: flex-start;
+}
+
+/* Botão sempre no fim do card, mesmo com textos de tamanhos diferentes */
+.card-peneira .botao,
+.card-atleta .botao {
+    margin-top: auto;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--raio);
+    border: 2px solid var(--verde);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao-primario {
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.botao-primario:hover {
+    background-color: var(--verde-escuro);
+    border-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.botao-secundario {
+    background-color: var(--branco);
+    color: var(--verde);
+}
+
+.botao-secundario:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde);
+}
+
+/* ---------- Formulários ---------- */
+.card-formulario {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.grupo-campos {
+    border: none;
+    border-top: 1px solid var(--borda);
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.grupo-campos legend {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-right: 8px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--texto);
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 10px 12px;
+    width: 100%;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--verde);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.dica-campo {
+    color: var(--texto-suave);
+    font-size: 0.875rem;
+}
+
+/* Caixa de seleção com o texto ao lado */
+.opcao-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opcao-check input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--verde);
+}
+
+.acoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ---------- Etiquetas (Futebol, Vôlei...) ---------- */
+.etiqueta {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: var(--verde-claro);
+    color: var(--verde);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+
+.lista-etiquetas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ---------- Status (Aprovado, Em análise...) ---------- */
+.status {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.status-aprovado {
+    background-color: var(--verde-claro);
+    color: var(--verde);
+}
+
+.status-analise {
+    background-color: var(--amarelo-claro);
+    color: var(--amarelo);
+}
+
+.status-reprovado {
+    background-color: var(--vermelho-claro);
+    color: var(--vermelho);
+}
+
+.selo-novo {
+    display: inline-block;
+    background-color: var(--verde);
+    color: var(--branco);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 1px 8px;
+    border-radius: 999px;
+}
+
+.selo-verificado {
+    color: var(--verde);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.selo-verificado::before {
+    content: "✓ ";
+}
+
+/* ---------- Notas (OVR, Potencial e atributos) ---------- */
+.nota {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nota label {
+    font-weight: 600;
+}
+
+meter {
+    width: 100%;
+    height: 14px;
+}
+
+.valor-nota {
+    color: var(--texto-suave);
+}
+
+.valor-nota strong {
+    font-size: 1.5rem;
+    color: var(--verde);
+}
+
+.notas-atleta strong {
+    color: var(--verde);
+    font-size: 1.1rem;
+}
+
+/* Lista de atributos: nome | barra | número */
+.lista-atributos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lista-atributos li {
+    display: grid;
+    grid-template-columns: 100px 1fr 32px;
+    align-items: center;
+    gap: 12px;
+}
+
+.valor-atributo {
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ---------- Lista de dados (Posição: Meia...) ---------- */
+.lista-dados {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.lista-dados dt {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.lista-dados dd {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* ---------- Tabelas ----------
+   No celular a tabela pode rolar para o lado sem quebrar a página. */
+.tabela {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative; /* mantém os textos .texto-leitor dentro da tabela */
+}
+
+.tabela th,
+.tabela td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela th {
+    background-color: var(--verde-claro);
+    color: var(--verde);
+    font-size: 0.9rem;
+}
+
+.tabela tbody tr:hover {
+    background-color: var(--fundo);
+}
+
+/* ---------- Fotos ---------- */
+.foto-pequena {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--verde-claro);
+}
+
+/* ---------- Citação (comentário do olheiro) ---------- */
+blockquote {
+    border-left: 4px solid var(--verde);
+    padding-left: 12px;
+    font-style: italic;
+    color: var(--texto-suave);
+}
+
+/* ---------- Listas simples ---------- */
+.lista-simples {
+    padding-left: 20px;
+}
+
+.lista-simples li + li {
+    margin-top: 6px;
+}
+
+/* ---------- Telas maiores ---------- */
+@media (min-width: 768px) {
+    .cabecalho {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 32px;
+    }
+
+    .conteudo {
+        padding: 32px 32px 64px;
+    }
+
+    .lista-cards {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .card-formulario {
+        padding: 32px;
+    }
+
+    .lista-dados {
+        grid-template-columns: 200px 1fr;
+        gap: 8px 16px;
+    }
+
+    .lista-dados dd {
+        margin-bottom: 0;
+    }
+
+    .tabela {
+        display: table;
+        white-space: normal;
+    }
+
+    .lista-atributos li {
+        grid-template-columns: 120px 1fr 32px;
+    }
+}
