@@ -142,38 +142,12 @@
     border-color: var(--verde);
 }
 
-.lista-noticias {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-
-.noticia {
-    background-color: var(--branco);
-    border-radius: var(--raio);
-    border: 1px solid var(--borda);
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
 .noticia-data {
     font-size: 0.85rem;
     color: var(--texto-suave);
 }
 
-.card-dica {
-    border-top: 4px solid var(--verde);
-}
-
 /* Números de resumo do olheiro */
-.resumo-numeros {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .lista-numeros {
     list-style: none;
     padding: 0;
@@ -197,8 +171,23 @@
     font-size: 0.9rem;
 }
 
-/* Lista de avaliações pendentes e de inscrições */
-.lista-pendentes,
+/* Painel: coluna principal + coluna lateral (início, peneiras e talentos) */
+.painel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.painel-principal,
+.painel-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+/* Lista de inscrições (peneiras do talento) */
 .lista-inscricoes {
     list-style: none;
     padding: 0;
@@ -207,17 +196,11 @@
     gap: 12px;
 }
 
-.item-pendente,
 .card-inscricao {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-.card .item-pendente .botao,
-.item-pendente .botao {
-    align-self: center;
 }
 
 /* =================== PERFIL / ATLETA =================== */
@@ -534,10 +517,6 @@
         grid-column: 1 / 3;
     }
 
-    .lista-noticias {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .lista-numeros {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -583,6 +562,41 @@
 
     .mensagem {
         max-width: 70%;
+    }
+}
+
+@media (min-width: 900px) {
+    /* Início: conteúdo à esquerda, painel lateral à direita */
+    .painel {
+        grid-template-columns: 1fr 320px;
+    }
+
+    .painel-principal {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .painel-lateral {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Peneiras e talentos: filtros à esquerda, resultados à direita */
+    .painel-filtros {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .painel-filtros .painel-lateral {
+        grid-column: 1;
+    }
+
+    .painel-filtros .painel-principal {
+        grid-column: 2;
+    }
+
+    /* Na coluna estreita, os filtros ficam um embaixo do outro */
+    .painel-filtros .form-busca {
+        grid-template-columns: 1fr;
     }
 }
 

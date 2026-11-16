@@ -402,6 +402,49 @@ meter {
     text-align: right;
 }
 
+/* ---------- Lista em linhas (dicas, notícias, pendências) ----------
+   Itens um embaixo do outro, separados por uma linha fina. */
+.lista-linhas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-linhas > * {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.lista-linhas > *:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.lista-linhas > *:last-child {
+    padding-bottom: 0;
+}
+
+.lista-linhas h3 {
+    font-size: 1rem;
+}
+
+/* Linha com texto à esquerda e ação à direita */
+.linha-acao {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.linha-acao .botao {
+    align-self: center;
+    padding: 6px 14px;
+}
+
 /* ---------- Lista de dados (Posição: Meia...) ---------- */
 .lista-dados {
     display: grid;

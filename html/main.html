@@ -30,123 +30,147 @@
             <p class="texto-apoio">Veja as novidades de <span id="regiao-usuario">Campinas, SP</span> para os seus esportes.</p>
         </section>
 
-        <section class="resumo-desempenho card" aria-labelledby="titulo-resumo">
-            <h2 id="titulo-resumo">Seu desempenho</h2>
+        <div class="painel">
 
-            <div class="nota">
-                <label for="main-ovr">Overall (OVR)</label>
-                <meter id="main-ovr" min="0" max="70" value="64">64 de 70</meter>
-                <p class="valor-nota"><strong>64</strong> / 70</p>
+            <!-- Coluna lateral: no celular aparece primeiro; no computador fica à direita -->
+            <div class="painel-lateral">
+
+                <section class="card resumo-desempenho" aria-labelledby="titulo-resumo">
+                    <h2 id="titulo-resumo">Seu desempenho</h2>
+
+                    <div class="nota">
+                        <label for="main-ovr">Overall (OVR)</label>
+                        <meter id="main-ovr" min="0" max="70" value="64">64 de 70</meter>
+                        <p class="valor-nota"><strong>64</strong> / 70</p>
+                    </div>
+
+                    <div class="nota">
+                        <label for="main-potencial">Potencial</label>
+                        <meter id="main-potencial" min="0" max="100" value="86">86 de 100</meter>
+                        <p class="valor-nota"><strong>86</strong> / 100</p>
+                    </div>
+
+                    <p class="dica-campo">Baseado em 4 avaliações de olheiros.</p>
+                    <a href="perfil.html" class="botao botao-secundario">Ver perfil completo</a>
+                </section>
+
+                <aside class="card aviso" aria-labelledby="titulo-aviso">
+                    <h2 id="titulo-aviso">2 mensagens novas</h2>
+                    <p>Um olheiro do Clube Atlético Aurora convidou você para uma peneira.</p>
+                    <a href="mensagens.html" class="botao botao-primario">Abrir mensagens</a>
+                </aside>
+
             </div>
 
-            <div class="nota">
-                <label for="main-potencial">Potencial</label>
-                <meter id="main-potencial" min="0" max="100" value="86">86 de 100</meter>
-                <p class="valor-nota"><strong>86</strong> / 100</p>
-            </div>
+            <!-- Coluna principal -->
+            <div class="painel-principal">
 
-            <p class="texto-apoio">Baseado em 4 avaliações de olheiros.</p>
-            <a href="perfil.html" class="botao botao-secundario">Ver perfil completo</a>
-        </section>
+                <section class="secao" aria-labelledby="titulo-peneiras">
+                    <div class="secao-topo">
+                        <h2 id="titulo-peneiras">Peneiras abrindo em breve</h2>
+                        <a href="peneiras.html">Ver todas</a>
+                    </div>
 
-        <aside class="aviso card" aria-labelledby="titulo-aviso">
-            <h2 id="titulo-aviso">Você tem 2 mensagens novas</h2>
-            <p>Um olheiro do Clube Atlético Aurora convidou você para uma peneira.</p>
-            <a href="mensagens.html" class="botao botao-primario">Abrir mensagens</a>
-        </aside>
+                    <div class="lista-cards">
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Peneira Sub-17</h3>
+                            <p class="card-clube">Clube Atlético Aurora</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-11-28">28/11/2026</time></li>
+                                <li>Local: Campinas, SP</li>
+                                <li>Vagas restantes: 12</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
 
-        <section class="secao" aria-labelledby="titulo-peneiras">
-            <div class="secao-topo">
-                <h2 id="titulo-peneiras">Peneiras abrindo em breve</h2>
-                <a href="peneiras.html">Ver todas</a>
-            </div>
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Avaliação aberta Sub-15 e Sub-17</h3>
+                            <p class="card-clube">Esporte Clube Horizonte</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-05">05/12/2026</time></li>
+                                <li>Local: Valinhos, SP</li>
+                                <li>Vagas restantes: 30</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
 
-            <div class="lista-cards">
-                <article class="card card-peneira">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Peneira Sub-17</h3>
-                    <p class="card-clube">Clube Atlético Aurora</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-11-28">28/11/2026</time></li>
-                        <li>Local: Campinas, SP</li>
-                        <li>Vagas restantes: 12</li>
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Vôlei</p>
+                            <h3>Seletiva de base</h3>
+                            <p class="card-clube">Vôlei Integração</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-12">12/12/2026</time></li>
+                                <li>Local: Campinas, SP</li>
+                                <li>Vagas restantes: 8</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Basquete</p>
+                            <h3>Peneira Sub-16</h3>
+                            <p class="card-clube">Basquete Estrela do Vale</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-14">14/12/2026</time></li>
+                                <li>Local: Jundiaí, SP</li>
+                                <li>Vagas restantes: 15</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card" aria-labelledby="titulo-noticias">
+                    <h2 id="titulo-noticias">Notícias dos seus esportes</h2>
+
+                    <div class="lista-linhas">
+                        <article class="noticia">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Clubes do interior ampliam categorias de base em 2027</h3>
+                            <p class="texto-apoio">Mais times anunciaram equipes Sub-15 e Sub-17, o que deve aumentar o número de peneiras na região.</p>
+                            <p class="noticia-data"><time datetime="2026-11-12">12/11/2026</time></p>
+                        </article>
+
+                        <article class="noticia">
+                            <p class="etiqueta">Vôlei</p>
+                            <h3>Campeonato estadual juvenil abre inscrições</h3>
+                            <p class="texto-apoio">Equipes escolares e de clubes podem se inscrever até o fim de dezembro.</p>
+                            <p class="noticia-data"><time datetime="2026-11-10">10/11/2026</time></p>
+                        </article>
+
+                        <article class="noticia">
+                            <p class="etiqueta">Basquete</p>
+                            <h3>Projeto social leva quadras novas a três bairros</h3>
+                            <p class="texto-apoio">As quadras terão treinos gratuitos para jovens de 12 a 17 anos, três vezes por semana.</p>
+                            <p class="noticia-data"><time datetime="2026-11-08">08/11/2026</time></p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card" aria-labelledby="titulo-dicas">
+                    <h2 id="titulo-dicas">Dicas para evoluir</h2>
+
+                    <ul class="lista-linhas">
+                        <li>
+                            <h3>Grave seus jogos</h3>
+                            <p class="texto-apoio">Vídeos curtos dos seus melhores lances ajudam o olheiro a conhecer seu estilo.</p>
+                        </li>
+                        <li>
+                            <h3>Durma bem antes do teste</h3>
+                            <p class="texto-apoio">Oito horas de sono na véspera melhoram reação, foco e resistência.</p>
+                        </li>
+                        <li>
+                            <h3>Treine a perna mais fraca</h3>
+                            <p class="texto-apoio">Dez minutos por dia de passes com a perna não dominante já fazem diferença.</p>
+                        </li>
                     </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
+                </section>
 
-                <article class="card card-peneira">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Avaliação aberta Sub-15 e Sub-17</h3>
-                    <p class="card-clube">Esporte Clube Horizonte</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-05">05/12/2026</time></li>
-                        <li>Local: Valinhos, SP</li>
-                        <li>Vagas restantes: 30</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Vôlei</p>
-                    <h3>Seletiva de base</h3>
-                    <p class="card-clube">Vôlei Integração</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-12">12/12/2026</time></li>
-                        <li>Local: Campinas, SP</li>
-                        <li>Vagas restantes: 8</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
             </div>
-        </section>
 
-        <section class="secao" aria-labelledby="titulo-dicas">
-            <h2 id="titulo-dicas">Dicas para evoluir</h2>
-
-            <div class="lista-cards">
-                <article class="card card-dica">
-                    <h3>Grave seus jogos</h3>
-                    <p>Vídeos curtos dos seus melhores lances ajudam o olheiro a conhecer seu estilo antes da peneira.</p>
-                </article>
-
-                <article class="card card-dica">
-                    <h3>Durma bem antes do teste</h3>
-                    <p>Oito horas de sono na véspera melhoram reação, foco e resistência durante a avaliação.</p>
-                </article>
-
-                <article class="card card-dica">
-                    <h3>Treine a perna mais fraca</h3>
-                    <p>Dez minutos por dia de passes e finalizações com a perna não dominante já fazem diferença em poucas semanas.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="secao" aria-labelledby="titulo-noticias">
-            <h2 id="titulo-noticias">Notícias dos seus esportes</h2>
-
-            <div class="lista-noticias">
-                <article class="noticia">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Clubes do interior ampliam categorias de base em 2027</h3>
-                    <p>Mais times anunciaram equipes Sub-15 e Sub-17, o que deve aumentar o número de peneiras na região.</p>
-                    <p class="noticia-data"><time datetime="2026-11-12">12/11/2026</time></p>
-                </article>
-
-                <article class="noticia">
-                    <p class="etiqueta">Vôlei</p>
-                    <h3>Campeonato estadual juvenil abre inscrições</h3>
-                    <p>Equipes escolares e de clubes podem se inscrever até o fim de dezembro.</p>
-                    <p class="noticia-data"><time datetime="2026-11-10">10/11/2026</time></p>
-                </article>
-
-                <article class="noticia">
-                    <p class="etiqueta">Basquete</p>
-                    <h3>Projeto social leva quadras novas a três bairros</h3>
-                    <p>As quadras terão treinos gratuitos para jovens de 12 a 17 anos, três vezes por semana.</p>
-                    <p class="noticia-data"><time datetime="2026-11-08">08/11/2026</time></p>
-                </article>
-            </div>
-        </section>
+        </div>
 
     </main>
 

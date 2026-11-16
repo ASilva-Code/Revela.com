@@ -28,137 +28,147 @@
         <h1>Peneiras</h1>
         <p class="texto-apoio">Encontre avaliações abertas perto de você e garanta sua vaga.</p>
 
-        <section class="card busca" aria-labelledby="titulo-busca">
-            <h2 id="titulo-busca">Buscar peneiras</h2>
+        <div class="painel painel-filtros">
 
-            <form id="form-busca" class="form-busca" role="search" action="peneiras.html">
-                <div class="campo">
-                    <label for="busca-texto">Nome do clube ou da peneira</label>
-                    <input type="search" id="busca-texto" placeholder="Ex.: Sub-17, Aurora">
-                </div>
+            <div class="painel-lateral">
+                <section class="card busca" aria-labelledby="titulo-busca">
+                    <h2 id="titulo-busca">Buscar peneiras</h2>
 
-                <div class="campo">
-                    <label for="busca-esporte">Esporte</label>
-                    <select id="busca-esporte">
-                        <option value="">Todos</option>
-                        <option value="futebol">Futebol</option>
-                        <option value="volei">Vôlei</option>
-                        <option value="basquete">Basquete</option>
-                    </select>
-                </div>
+                    <form id="form-busca" class="form-busca" role="search" action="peneiras.html">
+                        <div class="campo">
+                            <label for="busca-texto">Nome do clube ou da peneira</label>
+                            <input type="search" id="busca-texto" placeholder="Ex.: Sub-17, Aurora">
+                        </div>
 
-                <div class="campo">
-                    <label for="busca-cidade">Cidade</label>
-                    <input type="text" id="busca-cidade" placeholder="Ex.: Campinas">
-                </div>
+                        <div class="campo">
+                            <label for="busca-esporte">Esporte</label>
+                            <select id="busca-esporte">
+                                <option value="">Todos</option>
+                                <option value="futebol">Futebol</option>
+                                <option value="volei">Vôlei</option>
+                                <option value="basquete">Basquete</option>
+                            </select>
+                        </div>
 
-                <div class="campo">
-                    <label for="busca-data">A partir de</label>
-                    <input type="date" id="busca-data">
-                </div>
+                        <div class="campo">
+                            <label for="busca-cidade">Cidade</label>
+                            <input type="text" id="busca-cidade" placeholder="Ex.: Campinas">
+                        </div>
 
-                <button type="submit" class="botao botao-primario">Buscar</button>
-            </form>
-        </section>
+                        <div class="campo">
+                            <label for="busca-data">A partir de</label>
+                            <input type="date" id="busca-data">
+                        </div>
 
-        <section class="secao" aria-labelledby="titulo-inscricoes">
-            <h2 id="titulo-inscricoes">Minhas inscrições</h2>
-
-            <ul class="lista-inscricoes">
-                <li class="card card-inscricao">
-                    <div>
-                        <h3>Avaliação aberta Sub-15 e Sub-17 — Esporte Clube Horizonte</h3>
-                        <p class="card-info"><time datetime="2026-12-05">05/12/2026</time> · Valinhos, SP</p>
-                    </div>
-                    <span class="status status-aprovado">Vaga garantida</span>
-                </li>
-            </ul>
-        </section>
-
-        <section class="secao" aria-labelledby="titulo-proximas">
-            <h2 id="titulo-proximas">Peneiras perto de você</h2>
-            <p class="texto-apoio" id="resultado-busca">6 peneiras encontradas</p>
-
-            <div class="lista-cards" id="lista-peneiras">
-                <article class="card card-peneira">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Peneira Sub-17</h3>
-                    <p class="card-clube">Clube Atlético Aurora</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-11-28">28/11/2026</time></li>
-                        <li>Local: Campinas, SP</li>
-                        <li>Idade: 15 a 17 anos</li>
-                        <li>Vagas restantes: 12 de 40</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Avaliação aberta Sub-15 e Sub-17</h3>
-                    <p class="card-clube">Esporte Clube Horizonte</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-05">05/12/2026</time></li>
-                        <li>Local: Valinhos, SP</li>
-                        <li>Idade: 13 a 17 anos</li>
-                        <li>Vagas restantes: 30 de 60</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Vôlei</p>
-                    <h3>Seletiva de base</h3>
-                    <p class="card-clube">Vôlei Integração</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-12">12/12/2026</time></li>
-                        <li>Local: Campinas, SP</li>
-                        <li>Idade: 14 a 18 anos</li>
-                        <li>Vagas restantes: 8 de 24</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Basquete</p>
-                    <h3>Peneira Sub-16</h3>
-                    <p class="card-clube">Basquete Estrela do Vale</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-14">14/12/2026</time></li>
-                        <li>Local: Jundiaí, SP</li>
-                        <li>Idade: 14 a 16 anos</li>
-                        <li>Vagas restantes: 15 de 30</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Futebol</p>
-                    <h3>Peneira para goleiros</h3>
-                    <p class="card-clube">Associação Esportiva Ribeirão</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2026-12-19">19/12/2026</time></li>
-                        <li>Local: Sumaré, SP</li>
-                        <li>Idade: 13 a 18 anos</li>
-                        <li>Vagas restantes: 6 de 10</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
-
-                <article class="card card-peneira">
-                    <p class="etiqueta">Vôlei</p>
-                    <h3>Avaliação feminina Sub-17</h3>
-                    <p class="card-clube">Vôlei Integração</p>
-                    <ul class="card-info">
-                        <li>Data: <time datetime="2027-01-09">09/01/2027</time></li>
-                        <li>Local: Campinas, SP</li>
-                        <li>Idade: 14 a 17 anos</li>
-                        <li>Vagas restantes: 20 de 20</li>
-                    </ul>
-                    <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
-                </article>
+                        <button type="submit" class="botao botao-primario">Buscar</button>
+                    </form>
+                </section>
             </div>
-        </section>
+
+            <div class="painel-principal">
+
+                <section class="secao" aria-labelledby="titulo-inscricoes">
+                    <h2 id="titulo-inscricoes">Minhas inscrições</h2>
+
+                    <ul class="lista-inscricoes">
+                        <li class="card card-inscricao">
+                            <div>
+                                <h3>Avaliação aberta Sub-15 e Sub-17 — Esporte Clube Horizonte</h3>
+                                <p class="card-info"><time datetime="2026-12-05">05/12/2026</time> · Valinhos, SP</p>
+                            </div>
+                            <span class="status status-aprovado">Vaga garantida</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="secao" aria-labelledby="titulo-proximas">
+                    <h2 id="titulo-proximas">Peneiras perto de você</h2>
+                    <p class="texto-apoio" id="resultado-busca">6 peneiras encontradas</p>
+
+                    <div class="lista-cards" id="lista-peneiras">
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Peneira Sub-17</h3>
+                            <p class="card-clube">Clube Atlético Aurora</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-11-28">28/11/2026</time></li>
+                                <li>Local: Campinas, SP</li>
+                                <li>Idade: 15 a 17 anos</li>
+                                <li>Vagas restantes: 12 de 40</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Avaliação aberta Sub-15 e Sub-17</h3>
+                            <p class="card-clube">Esporte Clube Horizonte</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-05">05/12/2026</time></li>
+                                <li>Local: Valinhos, SP</li>
+                                <li>Idade: 13 a 17 anos</li>
+                                <li>Vagas restantes: 30 de 60</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Vôlei</p>
+                            <h3>Seletiva de base</h3>
+                            <p class="card-clube">Vôlei Integração</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-12">12/12/2026</time></li>
+                                <li>Local: Campinas, SP</li>
+                                <li>Idade: 14 a 18 anos</li>
+                                <li>Vagas restantes: 8 de 24</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Basquete</p>
+                            <h3>Peneira Sub-16</h3>
+                            <p class="card-clube">Basquete Estrela do Vale</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-14">14/12/2026</time></li>
+                                <li>Local: Jundiaí, SP</li>
+                                <li>Idade: 14 a 16 anos</li>
+                                <li>Vagas restantes: 15 de 30</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Futebol</p>
+                            <h3>Peneira para goleiros</h3>
+                            <p class="card-clube">Associação Esportiva Ribeirão</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2026-12-19">19/12/2026</time></li>
+                                <li>Local: Sumaré, SP</li>
+                                <li>Idade: 13 a 18 anos</li>
+                                <li>Vagas restantes: 6 de 10</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+
+                        <article class="card card-peneira">
+                            <p class="etiqueta">Vôlei</p>
+                            <h3>Avaliação feminina Sub-17</h3>
+                            <p class="card-clube">Vôlei Integração</p>
+                            <ul class="card-info">
+                                <li>Data: <time datetime="2027-01-09">09/01/2027</time></li>
+                                <li>Local: Campinas, SP</li>
+                                <li>Idade: 14 a 17 anos</li>
+                                <li>Vagas restantes: 20 de 20</li>
+                            </ul>
+                            <a href="peneira-detalhe.html" class="botao botao-primario">Ver detalhes</a>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
 
     </main>
 
