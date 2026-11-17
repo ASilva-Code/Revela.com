@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversas do olheiro com atletas e responsáveis.">
     <title>Mensagens | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-mensagens">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
@@ -24,7 +27,7 @@
         </nav>
     </header>
 
-    <main class="conteudo mensagens-layout">
+    <main id="conteudo" class="conteudo mensagens-layout">
 
         <h1>Mensagens</h1>
 
@@ -35,28 +38,28 @@
                     <a href="#conversa-ativa" class="conversa conversa-ativa" aria-current="true">
                         <strong>Lucas Andrade</strong>
                         <span>Futebol · Meia · 16 anos</span>
-                        <span class="conversa-previa">Muito obrigado pelo convite!</span>
-                        <span class="selo-novo">1 nova</span>
+                        <span>Você: Combinado! As inscrições vão até o dia 25.</span>
                     </a>
                 </li>
                 <li>
                     <a href="#conversa-ativa" class="conversa">
                         <strong>João Vitor Alves</strong>
                         <span>Futebol · Atacante · 17 anos</span>
-                        <span class="conversa-previa">Confirmado para o dia 28!</span>
+                        <span>Confirmado para o dia 28!</span>
                     </a>
                 </li>
                 <li>
                     <a href="#conversa-ativa" class="conversa">
                         <strong>Pedro Santos</strong>
                         <span>Futebol · Zagueiro · 16 anos</span>
-                        <span class="conversa-previa">Quando sai o resultado?</span>
+                        <span>Quando sai o resultado da peneira de outubro?</span>
+                        <span class="selo-novo">1 nova</span>
                     </a>
                 </li>
             </ul>
         </aside>
 
-        <section class="conversa-aberta card" id="conversa-ativa" aria-labelledby="titulo-conversa">
+        <section class="card" id="conversa-ativa" aria-labelledby="titulo-conversa">
             <header class="conversa-topo">
                 <img src="../img/avatar-padrao.svg" alt="Foto de Lucas Andrade" class="foto-pequena" width="56" height="56">
                 <div>
@@ -68,7 +71,7 @@
 
             <ol class="lista-mensagens">
                 <li class="mensagem mensagem-enviada">
-                    <p>Oi, Lucas! Vi sua avaliação no Revela.com e gostei bastante do seu passe. Queremos ver você jogando de perto.</p>
+                    <p>Oi, Lucas! Você foi muito bem na nossa peneira de outubro e passou para a 2ª fase. Queremos ver você de novo na Peneira Sub-17 do dia 28.</p>
                     <p class="mensagem-hora"><time datetime="2026-11-12T14:05">12/11 às 14:05</time></p>
                 </li>
 
@@ -85,12 +88,17 @@
                     <p>Muito obrigado pelo convite! Vou conversar com minha mãe e confirmo ainda hoje.</p>
                     <p class="mensagem-hora"><time datetime="2026-11-12T18:30">12/11 às 18:30</time></p>
                 </li>
+
+                <li class="mensagem mensagem-enviada">
+                    <p>Combinado! As inscrições vão até o dia 25. Se a sua mãe tiver dúvidas, ela pode falar comigo por aqui.</p>
+                    <p class="mensagem-hora"><time datetime="2026-11-13T09:15">13/11 às 09:15</time></p>
+                </li>
             </ol>
 
-            <form id="form-mensagem" class="form-mensagem" action="mensagens-olheiro.html">
+            <form class="form-mensagem" action="mensagens-olheiro.html" method="get">
                 <div class="campo">
                     <label for="anexar-convite">Anexar convite (opcional)</label>
-                    <select id="anexar-convite">
+                    <select id="anexar-convite" name="convite">
                         <option value="">Nenhum</option>
                         <option value="sub17">Peneira Sub-17 — 28/11/2026</option>
                         <option value="sub15">Peneira Sub-15 — 19/12/2026</option>
@@ -99,7 +107,7 @@
 
                 <div class="campo">
                     <label for="texto-mensagem">Sua mensagem</label>
-                    <textarea id="texto-mensagem" rows="3" placeholder="Escreva sua mensagem..." required></textarea>
+                    <textarea id="texto-mensagem" name="mensagem" maxlength="1000" rows="3" placeholder="Escreva sua mensagem..." required></textarea>
                 </div>
 
                 <button type="submit" class="botao botao-primario">Enviar</button>

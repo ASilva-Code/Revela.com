@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peneiras cadastradas pelo clube e cadastro de novas peneiras.">
     <title>Minhas peneiras | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-peneiras">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
@@ -24,70 +27,74 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
-        <h1>Peneiras do Clube Atlético Aurora</h1>
-        <p class="texto-apoio">Acompanhe as inscrições e cadastre novas peneiras.</p>
+        <header>
+            <h1>Peneiras do Clube Atlético Aurora</h1>
+            <p class="texto-apoio">Acompanhe as inscrições e cadastre novas peneiras.</p>
+        </header>
 
         <section class="card" aria-labelledby="titulo-lista">
             <h2 id="titulo-lista">Peneiras cadastradas</h2>
 
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th scope="col">Peneira</th>
-                        <th scope="col">Esporte</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Inscritos</th>
-                        <th scope="col">Situação</th>
-                        <th scope="col"><span class="texto-leitor">Ações</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Peneira Sub-17</td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-11-28">28/11/2026</time></td>
-                        <td>28 de 40</td>
-                        <td><span class="status status-aprovado">Inscrições abertas</span></td>
-                        <td><a href="inscritos.html">Ver inscritos</a></td>
-                    </tr>
-                    <tr>
-                        <td>Peneira Sub-15</td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-12-19">19/12/2026</time></td>
-                        <td>11 de 40</td>
-                        <td><span class="status status-aprovado">Inscrições abertas</span></td>
-                        <td><a href="inscritos.html">Ver inscritos</a></td>
-                    </tr>
-                    <tr>
-                        <td>Peneira Sub-17</td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-10-18">18/10/2026</time></td>
-                        <td>40 de 40</td>
-                        <td><span class="status status-analise">Encerrada</span></td>
-                        <td><a href="inscritos.html">Ver resultados</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabela-rolagem" role="region" tabindex="0" aria-labelledby="titulo-lista">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th scope="col">Peneira</th>
+                            <th scope="col">Esporte</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Inscritos</th>
+                            <th scope="col">Situação</th>
+                            <th scope="col"><span class="texto-leitor">Ações</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Peneira Sub-17</th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-11-28">28/11/2026</time></td>
+                            <td>28 de 40</td>
+                            <td><span class="status status-aprovado">Inscrições abertas</span></td>
+                            <td><a href="inscritos.html">Ver inscritos</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Peneira Sub-15</th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-12-19">19/12/2026</time></td>
+                            <td>11 de 40</td>
+                            <td><span class="status status-aprovado">Inscrições abertas</span></td>
+                            <td><a href="inscritos.html">Ver inscritos</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Peneira Sub-17</th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-10-18">18/10/2026</time></td>
+                            <td>40 de 40</td>
+                            <td><span class="status status-encerrada">Encerrada</span></td>
+                            <td><a href="inscritos.html">Ver resultados</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section aria-labelledby="titulo-nova">
             <h2 id="titulo-nova">Cadastrar nova peneira</h2>
 
-            <form id="form-nova-peneira" class="card-formulario" action="peneiras-olheiro.html">
+            <form class="card-formulario" action="peneiras-olheiro.html" method="get">
 
                 <fieldset class="grupo-campos">
                     <legend>Informações gerais</legend>
 
                     <div class="campo">
                         <label for="peneira-nome">Nome da peneira</label>
-                        <input type="text" id="peneira-nome" placeholder="Ex.: Peneira Sub-17" required>
+                        <input type="text" id="peneira-nome" name="nome" maxlength="80" placeholder="Ex.: Peneira Sub-17" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-esporte">Esporte</label>
-                        <select id="peneira-esporte" required>
+                        <select id="peneira-esporte" name="esporte" required>
                             <option value="">Selecione</option>
                             <option value="futebol">Futebol</option>
                             <option value="volei">Vôlei</option>
@@ -97,7 +104,7 @@
 
                     <div class="campo">
                         <label for="peneira-posicoes">Posições avaliadas</label>
-                        <input type="text" id="peneira-posicoes" placeholder="Ex.: Todas, exceto goleiro">
+                        <input type="text" id="peneira-posicoes" name="posicoes" maxlength="100" placeholder="Ex.: Todas, exceto goleiro">
                     </div>
                 </fieldset>
 
@@ -106,27 +113,27 @@
 
                     <div class="campo">
                         <label for="peneira-data">Data</label>
-                        <input type="date" id="peneira-data" required>
+                        <input type="date" id="peneira-data" name="data" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-inicio">Horário de início</label>
-                        <input type="time" id="peneira-inicio" required>
+                        <input type="time" id="peneira-inicio" name="inicio" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-fim">Horário de término</label>
-                        <input type="time" id="peneira-fim">
+                        <input type="time" id="peneira-fim" name="fim">
                     </div>
 
                     <div class="campo">
                         <label for="peneira-endereco">Endereço</label>
-                        <input type="text" id="peneira-endereco" placeholder="Rua, número e bairro" required>
+                        <input type="text" id="peneira-endereco" name="endereco" maxlength="150" placeholder="Rua, número e bairro" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-cidade">Cidade</label>
-                        <input type="text" id="peneira-cidade" required>
+                        <input type="text" id="peneira-cidade" name="cidade" maxlength="80" required>
                     </div>
                 </fieldset>
 
@@ -135,17 +142,17 @@
 
                     <div class="campo">
                         <label for="peneira-idade-min">Idade mínima</label>
-                        <input type="number" id="peneira-idade-min" min="10" max="21" required>
+                        <input type="number" id="peneira-idade-min" name="idade-min" step="1" min="10" max="21" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-idade-max">Idade máxima</label>
-                        <input type="number" id="peneira-idade-max" min="10" max="21" required>
+                        <input type="number" id="peneira-idade-max" name="idade-max" step="1" min="10" max="21" required>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-vagas">Número de vagas</label>
-                        <input type="number" id="peneira-vagas" min="1" max="500" required>
+                        <input type="number" id="peneira-vagas" name="vagas" step="1" min="1" max="500" required>
                     </div>
                 </fieldset>
 
@@ -154,12 +161,12 @@
 
                     <div class="campo">
                         <label for="peneira-levar">O que levar</label>
-                        <textarea id="peneira-levar" rows="3" placeholder="Ex.: documento com foto, chuteira, água"></textarea>
+                        <textarea id="peneira-levar" name="levar" maxlength="500" rows="3" placeholder="Ex.: documento com foto, chuteira, água"></textarea>
                     </div>
 
                     <div class="campo">
                         <label for="peneira-descricao">Como vai funcionar</label>
-                        <textarea id="peneira-descricao" rows="4"></textarea>
+                        <textarea id="peneira-descricao" name="descricao" maxlength="1000" rows="4"></textarea>
                     </div>
                 </fieldset>
 

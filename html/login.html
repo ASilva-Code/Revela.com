@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre ou crie sua conta no Revela.com, a plataforma que conecta jovens atletas a clubes e olheiros.">
     <title>Entrar | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
@@ -10,33 +11,41 @@
 </head>
 <body class="pagina-login">
 
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
+
+    <!-- Região do título: logo, slogan e apresentação na mesma faixa verde -->
     <header class="cabecalho-login">
-        <h1 class="logo">Revela.com</h1>
-        <p class="slogan">Seu talento merece ser visto.</p>
-    </header>
+        <div class="login-marca">
+            <h1 class="logo">Revela.com</h1>
+            <p class="slogan">Seu talento merece ser visto.</p>
+        </div>
 
-    <main class="login-conteudo">
-
-        <section class="login-apresentacao">
-            <h2>Conectamos jovens atletas a olheiros e clubes</h2>
+        <section class="login-apresentacao" aria-labelledby="titulo-apresentacao">
+            <h2 id="titulo-apresentacao">Conectamos jovens atletas a olheiros e clubes</h2>
             <ul class="lista-beneficios">
                 <li>Encontre peneiras abertas perto de você.</li>
                 <li>Receba avaliações de olheiros e acompanhe seu Overall e seu Potencial.</li>
                 <li>Seja convidado para testes e categorias de base.</li>
             </ul>
         </section>
+    </header>
 
-        <section class="card-formulario" id="secao-entrar">
-            <h2>Entrar</h2>
-            <form id="form-entrar" action="main.html">
+    <!-- Os dois formulários sobem um pouco sobre a faixa verde -->
+    <main id="conteudo" class="login-conteudo">
+
+        <section class="card-formulario card-entrar" id="secao-entrar" aria-labelledby="titulo-entrar">
+            <h2 id="titulo-entrar">Entrar</h2>
+            <!-- Demonstração sem servidor: os campos abaixo não têm "name", então o navegador
+                 valida o preenchimento, mas não envia nem mostra os dados (como a senha) na URL. -->
+            <form action="main.html" method="get">
                 <div class="campo">
                     <label for="entrar-email">E-mail</label>
-                    <input type="email" id="entrar-email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                    <input type="email" id="entrar-email" maxlength="254" placeholder="seuemail@exemplo.com" autocomplete="email" required>
                 </div>
 
                 <div class="campo">
                     <label for="entrar-senha">Senha</label>
-                    <input type="password" id="entrar-senha" autocomplete="current-password" required>
+                    <input type="password" id="entrar-senha" maxlength="64" autocomplete="current-password" required>
                 </div>
 
                 <button type="submit" class="botao botao-primario">Entrar</button>
@@ -44,27 +53,27 @@
             <p class="texto-apoio">Ainda não tem conta? <a href="#secao-cadastrar">Crie a sua</a></p>
         </section>
 
-        <section class="card-formulario" id="secao-cadastrar">
-            <h2>Criar conta</h2>
-            <form id="form-cadastrar" action="formulario.html">
+        <section class="card-formulario" id="secao-cadastrar" aria-labelledby="titulo-cadastrar">
+            <h2 id="titulo-cadastrar">Criar conta</h2>
+            <form action="formulario.html" method="get">
                 <div class="campo">
                     <label for="cadastro-nome">Nome completo</label>
-                    <input type="text" id="cadastro-nome" autocomplete="name" required>
+                    <input type="text" id="cadastro-nome" minlength="3" maxlength="100" autocomplete="name" required>
                 </div>
 
                 <div class="campo">
                     <label for="cadastro-nascimento">Data de nascimento</label>
-                    <input type="date" id="cadastro-nascimento" required>
+                    <input type="date" id="cadastro-nascimento" min="1940-01-01" max="2016-12-31" autocomplete="bday" required>
                 </div>
 
                 <div class="campo">
                     <label for="cadastro-email">E-mail</label>
-                    <input type="email" id="cadastro-email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                    <input type="email" id="cadastro-email" maxlength="254" placeholder="seuemail@exemplo.com" autocomplete="email" required>
                 </div>
 
                 <div class="campo">
                     <label for="cadastro-senha">Senha</label>
-                    <input type="password" id="cadastro-senha" minlength="6" autocomplete="new-password" aria-describedby="dica-senha" required>
+                    <input type="password" id="cadastro-senha" maxlength="64" minlength="6" autocomplete="new-password" aria-describedby="dica-senha" required>
                     <small id="dica-senha" class="dica-campo">Mínimo de 6 caracteres.</small>
                 </div>
 

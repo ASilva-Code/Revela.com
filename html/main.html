@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel do atleta: desempenho, peneiras abrindo em breve, mensagens e notícias.">
     <title>Início | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-main">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main.html" class="logo">Revela.com</a>
@@ -23,11 +26,11 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <section class="boas-vindas">
-            <h1>Olá, <span id="nome-usuario">Lucas</span>!</h1>
-            <p class="texto-apoio">Veja as novidades de <span id="regiao-usuario">Campinas, SP</span> para os seus esportes.</p>
+            <h1>Olá, Lucas!</h1>
+            <p class="texto-apoio">Veja as novidades de Campinas, SP para os seus esportes.</p>
         </section>
 
         <div class="painel">
@@ -35,7 +38,7 @@
             <!-- Coluna lateral: no celular aparece primeiro; no computador fica à direita -->
             <div class="painel-lateral">
 
-                <section class="card resumo-desempenho" aria-labelledby="titulo-resumo">
+                <section class="card" aria-labelledby="titulo-resumo">
                     <h2 id="titulo-resumo">Seu desempenho</h2>
 
                     <div class="nota">
@@ -55,8 +58,8 @@
                 </section>
 
                 <aside class="card aviso" aria-labelledby="titulo-aviso">
-                    <h2 id="titulo-aviso">2 mensagens novas</h2>
-                    <p>Um olheiro do Clube Atlético Aurora convidou você para uma peneira.</p>
+                    <h2 id="titulo-aviso">1 mensagem nova</h2>
+                    <p>Rafael Moura, olheiro do Clube Atlético Aurora, respondeu sobre o seu convite para a Peneira Sub-17.</p>
                     <a href="mensagens.html" class="botao botao-primario">Abrir mensagens</a>
                 </aside>
 

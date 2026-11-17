@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informações, requisitos e inscrição da Peneira Sub-17 do Clube Atlético Aurora.">
     <title>Peneira Sub-17 | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
@@ -10,12 +11,14 @@
 </head>
 <body class="pagina-peneira-detalhe">
 
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
+
     <header class="cabecalho">
         <a href="main.html" class="logo">Revela.com</a>
         <nav class="menu-principal" aria-label="Menu principal">
             <ul>
                 <li><a href="main.html">Início</a></li>
-                <li><a href="peneiras.html" aria-current="page">Peneiras</a></li>
+                <li><a href="peneiras.html" aria-current="true">Peneiras</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
                 <li><a href="perfil.html">Perfil</a></li>
                 <li><a href="login.html" class="link-sair">Sair</a></li>
@@ -23,13 +26,13 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <p><a href="peneiras.html" class="link-voltar">&larr; Voltar para peneiras</a></p>
 
         <article class="detalhe-peneira">
 
-            <header class="card detalhe-topo">
+            <header class="card">
                 <p class="etiqueta">Futebol</p>
                 <h1>Peneira Sub-17</h1>
                 <p class="card-clube">Clube Atlético Aurora</p>
@@ -51,6 +54,8 @@
                     <dd>Todas, exceto goleiro</dd>
                     <dt>Vagas</dt>
                     <dd><strong>12</strong> restantes de 40</dd>
+                    <dt>Inscrições até</dt>
+                    <dd><time datetime="2026-11-25">25/11/2026</time></dd>
                     <dt>Custo</dt>
                     <dd>Gratuito</dd>
                 </dl>
@@ -86,21 +91,21 @@
             <section class="card inscricao" aria-labelledby="titulo-inscricao">
                 <h2 id="titulo-inscricao">Garantir minha vaga</h2>
 
-                <form id="form-inscricao" action="peneiras.html">
+                <form action="peneiras.html" method="get">
                     <div class="opcao-check">
-                        <input type="checkbox" id="confirma-requisitos" required>
+                        <input type="checkbox" id="confirma-requisitos" name="confirma-requisitos" value="sim" required>
                         <label for="confirma-requisitos">Li as informações e cumpro os requisitos de idade.</label>
                     </div>
 
                     <div class="opcao-check">
-                        <input type="checkbox" id="confirma-responsavel">
+                        <input type="checkbox" id="confirma-responsavel" name="confirma-responsavel" value="sim">
                         <label for="confirma-responsavel">Meu responsável está ciente da inscrição (obrigatório para menores de 18 anos).</label>
                     </div>
 
-                    <button type="submit" class="botao botao-primario" id="botao-inscrever">Garantir vaga</button>
+                    <button type="submit" class="botao botao-primario">Garantir vaga</button>
                 </form>
 
-                <p class="texto-apoio" id="status-inscricao">Você ainda não está inscrito nesta peneira.</p>
+                <p class="texto-apoio">Você ainda não está inscrito nesta peneira.</p>
             </section>
 
         </article>

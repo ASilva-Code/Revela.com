@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busque atletas por esporte, posição, cidade, idade e Overall.">
     <title>Buscar talentos | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-talentos">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
@@ -24,26 +27,28 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
-        <h1>Buscar talentos</h1>
-        <p class="texto-apoio">Filtre os atletas cadastrados e abra o perfil para avaliar ou enviar um convite.</p>
+        <header>
+            <h1>Buscar talentos</h1>
+            <p class="texto-apoio">Filtre os atletas cadastrados e abra o perfil para avaliar ou enviar um convite.</p>
+        </header>
 
         <div class="painel painel-filtros">
 
             <div class="painel-lateral">
-                <section class="card busca" aria-labelledby="titulo-filtros">
+                <section class="card" aria-labelledby="titulo-filtros">
                     <h2 id="titulo-filtros">Filtros</h2>
 
-                    <form id="form-filtros" class="form-busca" role="search" action="talentos.html">
+                    <form class="form-busca" role="search" action="talentos.html" method="get">
                         <div class="campo">
                             <label for="filtro-nome">Nome do atleta</label>
-                            <input type="search" id="filtro-nome">
+                            <input type="search" id="filtro-nome" name="nome" maxlength="100">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-esporte">Esporte</label>
-                            <select id="filtro-esporte">
+                            <select id="filtro-esporte" name="esporte">
                                 <option value="">Todos</option>
                                 <option value="futebol">Futebol</option>
                                 <option value="volei">Vôlei</option>
@@ -53,32 +58,32 @@
 
                         <div class="campo">
                             <label for="filtro-posicao">Posição</label>
-                            <input type="text" id="filtro-posicao" placeholder="Ex.: Meia">
+                            <input type="text" id="filtro-posicao" name="posicao" maxlength="40" placeholder="Ex.: Meia">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-cidade">Cidade</label>
-                            <input type="text" id="filtro-cidade" placeholder="Ex.: Campinas">
+                            <input type="text" id="filtro-cidade" name="cidade" maxlength="80" placeholder="Ex.: Campinas">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-idade-min">Idade mínima</label>
-                            <input type="number" id="filtro-idade-min" min="10" max="21" placeholder="10">
+                            <input type="number" id="filtro-idade-min" name="idade-min" step="1" min="10" max="21" placeholder="10">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-idade-max">Idade máxima</label>
-                            <input type="number" id="filtro-idade-max" min="10" max="21" placeholder="21">
+                            <input type="number" id="filtro-idade-max" name="idade-max" step="1" min="10" max="21" placeholder="21">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-ovr">OVR mínimo</label>
-                            <input type="number" id="filtro-ovr" min="0" max="70" placeholder="0">
+                            <input type="number" id="filtro-ovr" name="ovr-min" step="1" min="0" max="70" placeholder="0">
                         </div>
 
                         <div class="campo">
                             <label for="filtro-ordem">Ordenar por</label>
-                            <select id="filtro-ordem">
+                            <select id="filtro-ordem" name="ordem">
                                 <option value="potencial">Maior potencial</option>
                                 <option value="ovr">Maior OVR</option>
                                 <option value="idade">Menor idade</option>
@@ -94,9 +99,9 @@
 
                 <section class="secao" aria-labelledby="titulo-resultados">
                     <h2 id="titulo-resultados">Resultados</h2>
-                    <p class="texto-apoio" id="resultado-busca">6 atletas encontrados</p>
+                    <p class="texto-apoio">6 atletas encontrados</p>
 
-                    <div class="lista-cards" id="lista-talentos">
+                    <div class="lista-cards">
                         <article class="card card-atleta">
                             <img src="../img/avatar-padrao.svg" alt="Foto de Beatriz Lima" class="foto-pequena" width="56" height="56">
                             <h3>Beatriz Lima</h3>

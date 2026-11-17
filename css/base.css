@@ -1,43 +1,67 @@
 /* =========================================================
    Revela.com — base.css
-   Cores, reset, tipografia e regras gerais da página.
+   Variáveis, reset, tipografia e regras gerais da página.
+   Ordem de carregamento: base.css → componentes.css → telas.css
    ========================================================= */
 
-/* ---------- Variáveis de cor e medidas ---------- */
+/* ---------- Variáveis (cores, medidas, sombras) ----------
+   Mudando um valor aqui, ele muda no site inteiro. */
 :root {
+    /* Identidade visual */
     --verde: #1f5e3b;          /* cor principal */
     --verde-escuro: #154429;   /* hover dos botões */
     --verde-claro: #e6efe9;    /* fundos de destaque */
     --branco: #ffffff;
     --fundo: #f4f6f5;          /* fundo da página */
     --texto: #1d2b24;
-    --texto-suave: #5b6b62;
+    --texto-suave: #5b6b62;    /* textos de apoio */
     --borda: #d5dfd9;
 
+    /* Cores de status (Em análise / Não aprovado) */
     --amarelo: #7a5b00;
     --amarelo-claro: #fff4cc;
     --vermelho: #9b2c2c;
     --vermelho-claro: #fbe8e8;
 
-    --raio: 8px;               /* arredondamento padrão */
+    /* Arredondamentos */
+    --raio: 8px;               /* botões, campos e itens pequenos */
+    --raio-card: 12px;         /* cards e formulários */
+    --raio-pilula: 999px;      /* etiquetas e selos */
+
+    /* Sombras */
     --sombra: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --sombra-elevada: 0 6px 16px rgba(21, 68, 41, 0.12);
+
+    /* Espaçamentos que se repetem */
+    --espaco-pagina: 16px;     /* margem lateral no celular */
+    --espaco-card: 16px;       /* respiro interno dos cards no celular */
+
+    /* Foco do teclado: contorno escuro, visível sobre fundos claros */
+    --foco: 3px solid var(--verde);
+
+    /* Transição padrão dos elementos interativos */
+    --transicao: 0.2s ease;
 }
 
 /* ---------- Reset simples ---------- */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ---------- Responsividade (regra obrigatória do projeto) ---------- */
-body {
-    max-width: 100%;
-    height: auto;
+/* ---------- Página ---------- */
+html {
+    -webkit-text-size-adjust: 100%; /* evita textos aumentados ao girar o celular */
 }
 
-/* ---------- Página ---------- */
 body {
+    /* Responsividade (regra obrigatória do projeto) */
+    max-width: 100%;
+    height: auto;
+
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -46,6 +70,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-wrap: break-word; /* palavras longas quebram em vez de vazar */
 }
 
 main {
@@ -65,6 +90,7 @@ h2 {
 
 h3 {
     font-size: 1.05rem;
+    line-height: 1.35;
 }
 
 strong {
@@ -74,19 +100,17 @@ strong {
 /* ---------- Links ---------- */
 a {
     color: var(--verde);
+    text-underline-offset: 3px;
 }
 
 a:hover {
     color: var(--verde-escuro);
 }
 
-/* Contorno visível para quem navega pelo teclado */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 3px solid #8fc1a3;
+/* Contorno visível para quem navega pelo teclado.
+   :focus-visible só aparece no teclado, não no clique do mouse. */
+:focus-visible {
+    outline: var(--foco);
     outline-offset: 2px;
 }
 
@@ -115,13 +139,60 @@ table {
     position: absolute;
     width: 1px;
     height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
+}
+
+/* ---------- Link "Pular para o conteúdo" ----------
+   Fica escondido no topo e aparece quando recebe o foco (tecla Tab). */
+.link-pular {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    padding: 10px 16px;
+    border-radius: var(--raio);
+    background-color: var(--verde);
+    color: var(--branco);
+    font-weight: 600;
+    transform: translateY(-150%);
+}
+
+.link-pular:focus {
+    transform: translateY(0);
+    color: var(--branco);
+}
+
+/* ---------- Movimento ----------
+   Rolagem suave só para quem não pediu menos animação no sistema. */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Quem prefere menos movimento não vê transições nem deslocamentos */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
 
 /* ---------- Telas maiores ---------- */
 @media (min-width: 768px) {
+    :root {
+        --espaco-pagina: 32px;
+        --espaco-card: 24px;
+    }
+
     h1 {
         font-size: 2rem;
     }

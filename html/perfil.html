@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do atleta com notas, atributos, fotos e histórico de peneiras.">
     <title>Meu perfil | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-perfil">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main.html" class="logo">Revela.com</a>
@@ -23,23 +26,24 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <section class="perfil-topo card">
-            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Lucas Andrade" class="foto-perfil" id="foto-perfil" width="120" height="120">
+            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Lucas Andrade" class="foto-perfil" width="120" height="120">
 
             <div class="perfil-identificacao">
-                <h1 id="perfil-nome">Lucas Andrade</h1>
-                <p class="texto-apoio"><span id="perfil-idade">16 anos</span> · <span id="perfil-regiao">Campinas, SP</span></p>
+                <h1>Lucas Andrade</h1>
+                <p class="texto-apoio">16 anos · Campinas, SP</p>
                 <ul class="lista-etiquetas" aria-label="Esportes">
                     <li class="etiqueta">Futebol · Meia</li>
                     <li class="etiqueta">Vôlei · Ponteiro</li>
                 </ul>
             </div>
 
-            <form class="form-foto" action="perfil.html">
+            <form class="form-foto" action="perfil.html" method="get">
                 <label for="trocar-foto" class="botao botao-secundario">Trocar foto</label>
-                <input type="file" id="trocar-foto" accept="image/*">
+                <input type="file" id="trocar-foto" name="foto" accept="image/png, image/jpeg, image/webp" required>
+                <button type="submit" class="botao botao-primario">Salvar foto</button>
             </form>
         </section>
 
@@ -61,7 +65,7 @@
             <p class="texto-apoio">Média de 4 avaliações. O OVR vai de 0 a 70 e o Potencial de 0 a 100.</p>
         </section>
 
-        <section class="perfil-atributos card" aria-labelledby="titulo-atributos">
+        <section class="card" aria-labelledby="titulo-atributos">
             <h2 id="titulo-atributos">Atributos — Futebol</h2>
 
             <ul class="lista-atributos">
@@ -98,7 +102,7 @@
             </ul>
         </section>
 
-        <section class="perfil-dados card" aria-labelledby="titulo-dados">
+        <section class="card" aria-labelledby="titulo-dados">
             <h2 id="titulo-dados">Dados esportivos</h2>
 
             <dl class="lista-dados">
@@ -115,7 +119,7 @@
             </dl>
         </section>
 
-        <section class="perfil-galeria card" aria-labelledby="titulo-galeria">
+        <section class="card" aria-labelledby="titulo-galeria">
             <h2 id="titulo-galeria">Fotos</h2>
 
             <div class="galeria">
@@ -133,9 +137,9 @@
                 </figure>
             </div>
 
-            <form class="form-galeria" action="perfil.html">
+            <form class="form-galeria" action="perfil.html" method="get">
                 <label for="adicionar-fotos">Adicionar fotos</label>
-                <input type="file" id="adicionar-fotos" accept="image/*" multiple>
+                <input type="file" id="adicionar-fotos" name="fotos" accept="image/png, image/jpeg, image/webp" multiple>
                 <button type="submit" class="botao botao-secundario">Enviar fotos</button>
             </form>
         </section>
@@ -143,7 +147,7 @@
         <section class="perfil-avaliacoes" aria-labelledby="titulo-avaliacoes">
             <h2 id="titulo-avaliacoes">Avaliações recebidas</h2>
 
-            <article class="card card-avaliacao">
+            <article class="card">
                 <h3>Rafael Moura</h3>
                 <p class="card-clube">Olheiro · Clube Atlético Aurora</p>
                 <p class="card-info">
@@ -155,7 +159,7 @@
                 </blockquote>
             </article>
 
-            <article class="card card-avaliacao">
+            <article class="card">
                 <h3>Juliana Prado</h3>
                 <p class="card-clube">Coordenadora da base · Esporte Clube Horizonte</p>
                 <p class="card-info">
@@ -168,43 +172,45 @@
             </article>
         </section>
 
-        <section class="perfil-historico card" aria-labelledby="titulo-historico">
+        <section class="card" aria-labelledby="titulo-historico">
             <h2 id="titulo-historico">Histórico de peneiras</h2>
 
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th scope="col">Peneira</th>
-                        <th scope="col">Clube</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Desempenho</th>
-                        <th scope="col">Resultado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Peneira Sub-17</td>
-                        <td>Clube Atlético Aurora</td>
-                        <td><time datetime="2026-10-18">18/10/2026</time></td>
-                        <td>65</td>
-                        <td><span class="status status-aprovado">Aprovado para 2ª fase</span></td>
-                    </tr>
-                    <tr>
-                        <td>Avaliação aberta Sub-15</td>
-                        <td>Esporte Clube Horizonte</td>
-                        <td><time datetime="2026-09-02">02/09/2026</time></td>
-                        <td>63</td>
-                        <td><span class="status status-analise">Em análise</span></td>
-                    </tr>
-                    <tr>
-                        <td>Seletiva regional</td>
-                        <td>Associação Esportiva Ribeirão</td>
-                        <td><time datetime="2026-05-20">20/05/2026</time></td>
-                        <td>59</td>
-                        <td><span class="status status-reprovado">Não aprovado</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabela-rolagem" role="region" tabindex="0" aria-labelledby="titulo-historico">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th scope="col">Peneira</th>
+                            <th scope="col">Clube</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Desempenho</th>
+                            <th scope="col">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Peneira Sub-17</th>
+                            <td>Clube Atlético Aurora</td>
+                            <td><time datetime="2026-10-18">18/10/2026</time></td>
+                            <td>65</td>
+                            <td><span class="status status-aprovado">Aprovado para 2ª fase</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Avaliação aberta Sub-15</th>
+                            <td>Esporte Clube Horizonte</td>
+                            <td><time datetime="2026-09-02">02/09/2026</time></td>
+                            <td>63</td>
+                            <td><span class="status status-analise">Em análise</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Seletiva regional</th>
+                            <td>Associação Esportiva Ribeirão</td>
+                            <td><time datetime="2026-05-20">20/05/2026</time></td>
+                            <td>59</td>
+                            <td><span class="status status-reprovado">Não aprovado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>

@@ -1,13 +1,16 @@
 /* =========================================================
    Revela.com — componentes.css
-   Peças que se repetem em várias telas.
+   Peças que se repetem em várias telas: cabeçalho, menu,
+   botões, cards, formulários, etiquetas, notas e tabelas.
    ========================================================= */
 
-/* ---------- Cabeçalho com menu (telas logadas) ---------- */
+/* ---------- Cabeçalho com menu (telas logadas) ----------
+   Celular: logo em cima e menu embaixo, com quebra de linha.
+   A partir de 768px: logo à esquerda e menu à direita. */
 .cabecalho {
     background-color: var(--branco);
     border-bottom: 1px solid var(--borda);
-    padding: 12px 16px;
+    padding: 12px var(--espaco-pagina);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -18,6 +21,11 @@
     font-weight: 700;
     color: var(--verde);
     text-decoration: none;
+    align-self: flex-start;
+}
+
+.logo:hover {
+    color: var(--verde-escuro);
 }
 
 .menu-principal ul {
@@ -30,11 +38,12 @@
 
 .menu-principal a {
     display: block;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: var(--raio);
     color: var(--texto);
     text-decoration: none;
     font-weight: 500;
+    transition: background-color var(--transicao), color var(--transicao);
 }
 
 .menu-principal a:hover {
@@ -42,8 +51,8 @@
     color: var(--verde);
 }
 
-/* Página atual no menu */
-.menu-principal a[aria-current="page"] {
+/* Seção atual no menu (aria-current="page" ou "true") */
+.menu-principal a[aria-current] {
     background-color: var(--verde);
     color: var(--branco);
 }
@@ -57,7 +66,12 @@
     background-color: var(--branco);
     border-bottom: 1px solid var(--borda);
     padding: 16px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho-simples .logo {
+    align-self: center;
 }
 
 /* ---------- Área de conteúdo ---------- */
@@ -65,7 +79,7 @@
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 16px 48px;
+    padding: 24px var(--espaco-pagina) 48px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -77,6 +91,7 @@
     gap: 16px;
 }
 
+/* Título da seção com um link ao lado ("Ver todas") */
 .secao-topo {
     display: flex;
     justify-content: space-between;
@@ -85,8 +100,26 @@
     gap: 8px;
 }
 
+.secao-topo a {
+    font-weight: 600;
+}
+
 .texto-apoio {
     color: var(--texto-suave);
+}
+
+.texto-apoio a {
+    font-weight: 600;
+}
+
+/* Aviso das páginas de exemplo (versão sem banco de dados) */
+.aviso-demo {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    background-color: var(--branco);
+    border: 1px dashed var(--borda);
+    border-radius: var(--raio);
+    padding: 10px 14px;
 }
 
 .link-voltar {
@@ -94,12 +127,16 @@
     text-decoration: none;
 }
 
+.link-voltar:hover {
+    text-decoration: underline;
+}
+
 /* ---------- Rodapé ---------- */
 .rodape {
     background-color: var(--verde);
     color: var(--branco);
     text-align: center;
-    padding: 20px 16px;
+    padding: 20px var(--espaco-pagina);
     font-size: 0.9rem;
 }
 
@@ -107,9 +144,9 @@
 .card {
     background-color: var(--branco);
     border: 1px solid var(--borda);
-    border-radius: var(--raio);
+    border-radius: var(--raio-card);
     box-shadow: var(--sombra);
-    padding: 20px;
+    padding: var(--espaco-card);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -124,10 +161,11 @@
     min-width: 0;
 }
 
-/* Grade de cards: 1 coluna no celular, várias no computador */
+/* Grade de cards: o navegador decide quantas colunas cabem.
+   min(100%, 260px) evita que o card vaze em telas de 320px. */
 .lista-cards {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
     gap: 16px;
 }
 
@@ -144,6 +182,9 @@
 ul.card-info {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 /* Botão do card não ocupa a largura toda */
@@ -151,24 +192,83 @@ ul.card-info {
     align-self: flex-start;
 }
 
-/* Botão sempre no fim do card, mesmo com textos de tamanhos diferentes */
-.card-peneira .botao,
-.card-atleta .botao {
-    margin-top: auto;
+/* ---------- Card clicável (peneiras e atletas) ----------
+   O link do botão é "esticado" sobre o card inteiro com ::after,
+   então clicar em qualquer parte do card abre o mesmo destino.
+   Só esses cards recebem efeito de hover, porque só eles são clicáveis. */
+.card-peneira,
+.card-atleta {
+    position: relative;
+    transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
 }
 
-/* ---------- Botões ---------- */
+.card-peneira .botao,
+.card-atleta .botao {
+    margin-top: auto; /* botão sempre no fim do card */
+}
+
+.card-peneira .botao::after,
+.card-atleta .botao::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--raio-card);
+}
+
+.card-peneira:hover,
+.card-atleta:hover {
+    border-color: var(--verde);
+    box-shadow: var(--sombra-elevada);
+    transform: translateY(-2px);
+}
+
+/* Quem sobe é o card; o botão fica parado (um transform no botão
+   faria o ::after encolher para o tamanho dele) */
+.card-peneira .botao:hover,
+.card-atleta .botao:hover {
+    transform: none;
+}
+
+/* O botão já mostra o foco; o card só ganha a borda verde */
+.card-peneira:focus-within,
+.card-atleta:focus-within {
+    border-color: var(--verde);
+}
+
+/* ---------- Botões ----------
+   .botao-primario: ação principal da tela (fundo verde).
+   .botao-secundario: ação de apoio (fundo branco, borda verde). */
 .botao {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* tamanho confortável para o toque */
     padding: 10px 20px;
     border-radius: var(--raio);
     border: 2px solid var(--verde);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.2;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    transition:
+        background-color var(--transicao),
+        border-color var(--transicao),
+        color var(--transicao),
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--sombra);
+}
+
+.botao:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .botao-primario {
@@ -176,7 +276,8 @@ ul.card-info {
     color: var(--branco);
 }
 
-.botao-primario:hover {
+.botao-primario:hover,
+.botao-primario:active {
     background-color: var(--verde-escuro);
     border-color: var(--verde-escuro);
     color: var(--branco);
@@ -187,18 +288,19 @@ ul.card-info {
     color: var(--verde);
 }
 
-.botao-secundario:hover {
+.botao-secundario:hover,
+.botao-secundario:active {
     background-color: var(--verde-claro);
-    color: var(--verde);
+    color: var(--verde-escuro);
 }
 
 /* ---------- Formulários ---------- */
 .card-formulario {
     background-color: var(--branco);
     border: 1px solid var(--borda);
-    border-radius: var(--raio);
+    border-radius: var(--raio-card);
     box-shadow: var(--sombra);
-    padding: 20px;
+    padding: var(--espaco-card);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -210,6 +312,7 @@ ul.card-info {
     gap: 16px;
 }
 
+/* Grupo de campos (fieldset) separado por uma linha fina */
 .grupo-campos {
     border: none;
     border-top: 1px solid var(--borda);
@@ -217,6 +320,7 @@ ul.card-info {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    min-width: 0;
 }
 
 .grupo-campos legend {
@@ -225,10 +329,12 @@ ul.card-info {
     padding-right: 8px;
 }
 
+/* Rótulo em cima, campo embaixo */
 .campo {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
 
 .campo label {
@@ -240,13 +346,15 @@ input,
 select,
 textarea {
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 1rem; /* 16px evita o zoom automático no iPhone */
     color: var(--texto);
     background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: var(--raio);
     padding: 10px 12px;
     width: 100%;
+    min-height: 44px;
+    transition: border-color var(--transicao), box-shadow var(--transicao);
 }
 
 input:hover,
@@ -255,8 +363,32 @@ textarea:hover {
     border-color: var(--verde);
 }
 
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-color: var(--verde);
+    outline-offset: 1px;
+}
+
 textarea {
     resize: vertical;
+}
+
+/* Campo de arquivo: o botão interno segue o estilo do site */
+input[type="file"] {
+    padding: 8px;
+}
+
+input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 6px 12px;
+    border: 2px solid var(--verde);
+    border-radius: var(--raio);
+    background-color: var(--branco);
+    color: var(--verde);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .dica-campo {
@@ -271,17 +403,27 @@ textarea {
     gap: 10px;
 }
 
-.opcao-check input {
+.opcao-check input,
+input[type="checkbox"] {
     width: 20px;
     height: 20px;
+    min-height: 0;
+    flex-shrink: 0;
     accent-color: var(--verde);
 }
 
+/* Botões no fim do formulário.
+   No celular dividem a linha (ou ficam um embaixo do outro);
+   a partir de 768px ficam alinhados à direita no tamanho natural. */
 .acoes-formulario {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 12px;
+}
+
+.acoes-formulario .botao {
+    flex: 1 1 140px;
 }
 
 /* ---------- Etiquetas (Futebol, Vôlei...) ---------- */
@@ -295,7 +437,7 @@ textarea {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding: 2px 10px;
-    border-radius: 999px;
+    border-radius: var(--raio-pilula);
 }
 
 .lista-etiquetas {
@@ -306,39 +448,52 @@ textarea {
     gap: 8px;
 }
 
-/* ---------- Status (Aprovado, Em análise...) ---------- */
+/* ---------- Status (Aprovado, Em análise, Não aprovado, Encerrada) ----------
+   Verde = positivo (aprovado, inscrições abertas), amarelo = aguardando,
+   vermelho = negativo, cinza = encerrado (neutro). */
 .status {
     display: inline-block;
     font-size: 0.85rem;
     font-weight: 600;
     padding: 2px 10px;
-    border-radius: 999px;
+    border-radius: var(--raio-pilula);
+    border: 1px solid transparent;
     white-space: nowrap;
 }
 
 .status-aprovado {
     background-color: var(--verde-claro);
+    border-color: #b9d3c3;
     color: var(--verde);
 }
 
 .status-analise {
     background-color: var(--amarelo-claro);
+    border-color: #ecd98f;
     color: var(--amarelo);
 }
 
 .status-reprovado {
     background-color: var(--vermelho-claro);
+    border-color: #efc3c3;
     color: var(--vermelho);
+}
+
+.status-encerrada {
+    background-color: var(--fundo);
+    border-color: var(--borda);
+    color: var(--texto-suave);
 }
 
 .selo-novo {
     display: inline-block;
+    align-self: flex-start;
     background-color: var(--verde);
     color: var(--branco);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 1px 8px;
-    border-radius: 999px;
+    border-radius: var(--raio-pilula);
 }
 
 .selo-verificado {
@@ -351,20 +506,43 @@ textarea {
     content: "✓ ";
 }
 
-/* ---------- Notas (OVR, Potencial e atributos) ---------- */
+/* ---------- Notas (OVR, Potencial e atributos) ----------
+   Nome da nota, barra (<meter>) e valor em número. */
 .nota {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 .nota label {
     font-weight: 600;
 }
 
+/* Barra de nota: trilho verde-claro e preenchimento verde,
+   proporcional ao valor (value) dentro do máximo (max). */
 meter {
     width: 100%;
-    height: 14px;
+    height: 12px;
+    border: none;
+    border-radius: var(--raio-pilula);
+    background: var(--verde-claro);
+}
+
+meter::-webkit-meter-bar {
+    height: 12px;
+    border: none;
+    border-radius: var(--raio-pilula);
+    background: var(--verde-claro);
+}
+
+meter::-webkit-meter-optimum-value {
+    border-radius: var(--raio-pilula);
+    background: var(--verde);
+}
+
+meter::-moz-meter-bar {
+    border-radius: var(--raio-pilula);
+    background: var(--verde);
 }
 
 .valor-nota {
@@ -387,18 +565,23 @@ meter {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .lista-atributos li {
     display: grid;
-    grid-template-columns: 100px 1fr 32px;
+    grid-template-columns: minmax(84px, 120px) minmax(0, 1fr) 2.5ch;
     align-items: center;
     gap: 12px;
 }
 
+.lista-atributos label {
+    font-weight: 500;
+}
+
 .valor-atributo {
     font-weight: 700;
+    color: var(--verde);
     text-align: right;
 }
 
@@ -435,21 +618,29 @@ meter {
 /* Linha com texto à esquerda e ação à direita */
 .linha-acao {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    gap: 8px 12px;
+}
+
+.linha-acao > div {
+    min-width: 0;
 }
 
 .linha-acao .botao {
     align-self: center;
+    min-height: 36px;
     padding: 6px 14px;
+    font-size: 0.95rem;
 }
 
-/* ---------- Lista de dados (Posição: Meia...) ---------- */
+/* ---------- Lista de dados (Posição: Meia...) ----------
+   Celular: rótulo em cima do valor. 768px+: duas colunas. */
 .lista-dados {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 2px;
 }
 
 .lista-dados dt {
@@ -459,16 +650,22 @@ meter {
 
 .lista-dados dd {
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.lista-dados dd:last-child {
+    margin-bottom: 0;
 }
 
 /* ---------- Tabelas ----------
-   No celular a tabela pode rolar para o lado sem quebrar a página. */
-.tabela {
-    display: block;
+   A tabela fica dentro de .tabela-rolagem: se não couber na tela,
+   só essa área rola para o lado, e não a página inteira.
+   tabindex="0" no HTML permite rolar pelo teclado. */
+.tabela-rolagem {
+    position: relative; /* mantém os textos .texto-leitor dentro da área */
     overflow-x: auto;
-    white-space: nowrap;
-    position: relative; /* mantém os textos .texto-leitor dentro da tabela */
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
 }
 
 .tabela th,
@@ -476,12 +673,29 @@ meter {
     text-align: left;
     padding: 10px 12px;
     border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+    vertical-align: middle;
 }
 
-.tabela th {
+.tabela tbody tr:last-child th,
+.tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Cabeçalho das colunas */
+.tabela thead th {
     background-color: var(--verde-claro);
     color: var(--verde);
     font-size: 0.9rem;
+}
+
+/* Primeira célula de cada linha (nome da peneira ou do atleta) */
+.tabela tbody th {
+    font-weight: 600;
+}
+
+.tabela tbody tr {
+    transition: background-color var(--transicao);
 }
 
 .tabela tbody tr:hover {
@@ -492,6 +706,7 @@ meter {
 .foto-pequena {
     width: 56px;
     height: 56px;
+    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -499,6 +714,7 @@ meter {
 .foto-perfil {
     width: 120px;
     height: 120px;
+    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--verde-claro);
@@ -525,38 +741,47 @@ blockquote {
 @media (min-width: 768px) {
     .cabecalho {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 12px 32px;
     }
 
-    .conteudo {
-        padding: 32px 32px 64px;
-    }
-
-    .lista-cards {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    .logo {
+        align-self: center;
     }
 
     .card-formulario {
         padding: 32px;
     }
 
+    .acoes-formulario .botao {
+        flex: 0 0 auto;
+    }
+
     .lista-dados {
         grid-template-columns: 200px 1fr;
-        gap: 8px 16px;
+        gap: 10px 16px;
     }
 
     .lista-dados dd {
         margin-bottom: 0;
     }
 
-    .tabela {
-        display: table;
+    /* Com espaço sobrando, o texto das células pode quebrar linha:
+       a tabela cabe no card e a rolagem lateral fica só para o celular.
+       Os selos de status continuam inteiros (nowrap). */
+    .tabela th,
+    .tabela td {
         white-space: normal;
     }
+}
 
-    .lista-atributos li {
-        grid-template-columns: 120px 1fr 32px;
+/* ---------- Menos movimento ----------
+   Sem deslocamento de botões e cards para quem prefere menos animação. */
+@media (prefers-reduced-motion: reduce) {
+    .botao:hover,
+    .card-peneira:hover,
+    .card-atleta:hover {
+        transform: none;
     }
 }

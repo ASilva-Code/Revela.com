@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversas do atleta com olheiros e clubes.">
     <title>Mensagens | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-mensagens">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main.html" class="logo">Revela.com</a>
@@ -23,7 +26,7 @@
         </nav>
     </header>
 
-    <main class="conteudo mensagens-layout">
+    <main id="conteudo" class="conteudo mensagens-layout">
 
         <h1>Mensagens</h1>
 
@@ -34,21 +37,21 @@
                     <a href="#conversa-ativa" class="conversa conversa-ativa" aria-current="true">
                         <strong>Rafael Moura</strong>
                         <span>Clube Atlético Aurora</span>
-                        <span class="conversa-previa">Convite para a Peneira Sub-17</span>
-                        <span class="selo-novo">2 novas</span>
+                        <span>Combinado! As inscrições vão até o dia 25.</span>
+                        <span class="selo-novo">1 nova</span>
                     </a>
                 </li>
                 <li>
                     <a href="#conversa-ativa" class="conversa">
                         <strong>Juliana Prado</strong>
                         <span>Esporte Clube Horizonte</span>
-                        <span class="conversa-previa">Obrigada pela participação!</span>
+                        <span>Obrigada pela participação!</span>
                     </a>
                 </li>
             </ul>
         </aside>
 
-        <section class="conversa-aberta card" id="conversa-ativa" aria-labelledby="titulo-conversa">
+        <section class="card" id="conversa-ativa" aria-labelledby="titulo-conversa">
             <header class="conversa-topo">
                 <img src="../img/avatar-padrao.svg" alt="Foto de Rafael Moura" class="foto-pequena" width="56" height="56">
                 <div>
@@ -59,7 +62,7 @@
 
             <ol class="lista-mensagens">
                 <li class="mensagem mensagem-recebida">
-                    <p>Oi, Lucas! Vi sua avaliação no Revela.com e gostei bastante do seu passe. Queremos ver você jogando de perto.</p>
+                    <p>Oi, Lucas! Você foi muito bem na nossa peneira de outubro e passou para a 2ª fase. Queremos ver você de novo na Peneira Sub-17 do dia 28.</p>
                     <p class="mensagem-hora"><time datetime="2026-11-12T14:05">12/11 às 14:05</time></p>
                 </li>
 
@@ -76,11 +79,19 @@
                     <p>Muito obrigado pelo convite! Vou conversar com minha mãe e confirmo ainda hoje.</p>
                     <p class="mensagem-hora"><time datetime="2026-11-12T18:30">12/11 às 18:30</time></p>
                 </li>
+
+                <li class="mensagem mensagem-recebida">
+                    <p>Combinado! As inscrições vão até o dia 25. Se a sua mãe tiver dúvidas, ela pode falar comigo por aqui.</p>
+                    <p class="mensagem-hora"><time datetime="2026-11-13T09:15">13/11 às 09:15</time></p>
+                </li>
             </ol>
 
-            <form id="form-mensagem" class="form-mensagem" action="mensagens.html">
-                <label for="texto-mensagem">Sua mensagem</label>
-                <textarea id="texto-mensagem" rows="3" placeholder="Escreva sua resposta..." required></textarea>
+            <form class="form-mensagem" action="mensagens.html" method="get">
+                <div class="campo">
+                    <label for="texto-mensagem">Sua mensagem</label>
+                    <textarea id="texto-mensagem" name="mensagem" maxlength="1000" rows="3" placeholder="Escreva sua resposta..." required></textarea>
+                </div>
+
                 <button type="submit" class="botao botao-primario">Enviar</button>
             </form>
         </section>

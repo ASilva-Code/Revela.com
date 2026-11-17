@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de inscritos da Peneira Sub-17 e registro de resultados.">
     <title>Inscritos | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
@@ -10,13 +11,15 @@
 </head>
 <body class="pagina-inscritos">
 
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
+
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
         <nav class="menu-principal" aria-label="Menu principal">
             <ul>
                 <li><a href="main-olheiro.html">Início</a></li>
                 <li><a href="talentos.html">Talentos</a></li>
-                <li><a href="peneiras-olheiro.html" aria-current="page">Peneiras</a></li>
+                <li><a href="peneiras-olheiro.html" aria-current="true">Peneiras</a></li>
                 <li><a href="mensagens-olheiro.html">Mensagens</a></li>
                 <li><a href="perfil-olheiro.html">Perfil</a></li>
                 <li><a href="login.html" class="link-sair">Sair</a></li>
@@ -24,11 +27,13 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <p><a href="peneiras-olheiro.html" class="link-voltar">&larr; Voltar para minhas peneiras</a></p>
 
-        <section class="card detalhe-topo">
+        <p class="aviso-demo">Versão de demonstração: todas as peneiras abrem esta lista de exemplo da Peneira Sub-17 de 28/11.</p>
+
+        <section class="card">
             <p class="etiqueta">Futebol</p>
             <h1>Peneira Sub-17 — Inscritos</h1>
             <p class="card-info"><time datetime="2026-11-28">28/11/2026</time> · Centro de Treinamento Aurora, Campinas, SP · 28 de 40 vagas preenchidas</p>
@@ -38,114 +43,116 @@
             <h2 id="titulo-inscritos">Lista de inscritos</h2>
             <p class="texto-apoio">Depois da peneira, registre a presença, a nota de desempenho (0 a 70) e o resultado de cada atleta.</p>
 
-            <form id="form-resultados" action="inscritos.html">
-                <table class="tabela">
-                    <thead>
-                        <tr>
-                            <th scope="col">Atleta</th>
-                            <th scope="col">Idade</th>
-                            <th scope="col">Posição</th>
-                            <th scope="col">OVR</th>
-                            <th scope="col">Presença</th>
-                            <th scope="col">Desempenho</th>
-                            <th scope="col">Resultado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="atleta.html">Lucas Andrade</a></td>
-                            <td>16</td>
-                            <td>Meia</td>
-                            <td>64</td>
-                            <td>
-                                <label for="presenca-1" class="texto-leitor">Presença de Lucas Andrade</label>
-                                <input type="checkbox" id="presenca-1">
-                            </td>
-                            <td>
-                                <label for="desempenho-1" class="texto-leitor">Desempenho de Lucas Andrade</label>
-                                <input type="number" id="desempenho-1" min="0" max="70">
-                            </td>
-                            <td>
-                                <label for="resultado-1" class="texto-leitor">Resultado de Lucas Andrade</label>
-                                <select id="resultado-1">
-                                    <option value="">Pendente</option>
-                                    <option value="aprovado">Aprovado</option>
-                                    <option value="segunda-fase">2ª fase</option>
-                                    <option value="reprovado">Não aprovado</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="atleta.html">João Vitor Alves</a></td>
-                            <td>17</td>
-                            <td>Atacante</td>
-                            <td>67</td>
-                            <td>
-                                <label for="presenca-2" class="texto-leitor">Presença de João Vitor Alves</label>
-                                <input type="checkbox" id="presenca-2">
-                            </td>
-                            <td>
-                                <label for="desempenho-2" class="texto-leitor">Desempenho de João Vitor Alves</label>
-                                <input type="number" id="desempenho-2" min="0" max="70">
-                            </td>
-                            <td>
-                                <label for="resultado-2" class="texto-leitor">Resultado de João Vitor Alves</label>
-                                <select id="resultado-2">
-                                    <option value="">Pendente</option>
-                                    <option value="aprovado">Aprovado</option>
-                                    <option value="segunda-fase">2ª fase</option>
-                                    <option value="reprovado">Não aprovado</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="atleta.html">Pedro Santos</a></td>
-                            <td>16</td>
-                            <td>Zagueiro</td>
-                            <td>62</td>
-                            <td>
-                                <label for="presenca-3" class="texto-leitor">Presença de Pedro Santos</label>
-                                <input type="checkbox" id="presenca-3">
-                            </td>
-                            <td>
-                                <label for="desempenho-3" class="texto-leitor">Desempenho de Pedro Santos</label>
-                                <input type="number" id="desempenho-3" min="0" max="70">
-                            </td>
-                            <td>
-                                <label for="resultado-3" class="texto-leitor">Resultado de Pedro Santos</label>
-                                <select id="resultado-3">
-                                    <option value="">Pendente</option>
-                                    <option value="aprovado">Aprovado</option>
-                                    <option value="segunda-fase">2ª fase</option>
-                                    <option value="reprovado">Não aprovado</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="atleta.html">Mateus Oliveira</a></td>
-                            <td>17</td>
-                            <td>Atacante</td>
-                            <td>—</td>
-                            <td>
-                                <label for="presenca-4" class="texto-leitor">Presença de Mateus Oliveira</label>
-                                <input type="checkbox" id="presenca-4">
-                            </td>
-                            <td>
-                                <label for="desempenho-4" class="texto-leitor">Desempenho de Mateus Oliveira</label>
-                                <input type="number" id="desempenho-4" min="0" max="70">
-                            </td>
-                            <td>
-                                <label for="resultado-4" class="texto-leitor">Resultado de Mateus Oliveira</label>
-                                <select id="resultado-4">
-                                    <option value="">Pendente</option>
-                                    <option value="aprovado">Aprovado</option>
-                                    <option value="segunda-fase">2ª fase</option>
-                                    <option value="reprovado">Não aprovado</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <form class="form-resultados" action="inscritos.html" method="get">
+                <div class="tabela-rolagem" role="region" tabindex="0" aria-labelledby="titulo-inscritos">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th scope="col">Atleta</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Posição</th>
+                                <th scope="col">OVR</th>
+                                <th scope="col">Presença</th>
+                                <th scope="col">Desempenho</th>
+                                <th scope="col">Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><a href="atleta.html">Caio Ribeiro</a></th>
+                                <td>15</td>
+                                <td>Lateral</td>
+                                <td>61</td>
+                                <td>
+                                    <label for="presenca-1" class="texto-leitor">Presença de Caio Ribeiro</label>
+                                    <input type="checkbox" id="presenca-1" name="presenca-1" value="presente">
+                                </td>
+                                <td>
+                                    <label for="desempenho-1" class="texto-leitor">Desempenho de Caio Ribeiro</label>
+                                    <input type="number" id="desempenho-1" name="desempenho-1" step="1" min="0" max="70">
+                                </td>
+                                <td>
+                                    <label for="resultado-1" class="texto-leitor">Resultado de Caio Ribeiro</label>
+                                    <select id="resultado-1" name="resultado-1">
+                                        <option value="">Pendente</option>
+                                        <option value="aprovado">Aprovado</option>
+                                        <option value="segunda-fase">2ª fase</option>
+                                        <option value="reprovado">Não aprovado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="atleta.html">João Vitor Alves</a></th>
+                                <td>17</td>
+                                <td>Atacante</td>
+                                <td>67</td>
+                                <td>
+                                    <label for="presenca-2" class="texto-leitor">Presença de João Vitor Alves</label>
+                                    <input type="checkbox" id="presenca-2" name="presenca-2" value="presente">
+                                </td>
+                                <td>
+                                    <label for="desempenho-2" class="texto-leitor">Desempenho de João Vitor Alves</label>
+                                    <input type="number" id="desempenho-2" name="desempenho-2" step="1" min="0" max="70">
+                                </td>
+                                <td>
+                                    <label for="resultado-2" class="texto-leitor">Resultado de João Vitor Alves</label>
+                                    <select id="resultado-2" name="resultado-2">
+                                        <option value="">Pendente</option>
+                                        <option value="aprovado">Aprovado</option>
+                                        <option value="segunda-fase">2ª fase</option>
+                                        <option value="reprovado">Não aprovado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="atleta.html">Pedro Santos</a></th>
+                                <td>16</td>
+                                <td>Zagueiro</td>
+                                <td>62</td>
+                                <td>
+                                    <label for="presenca-3" class="texto-leitor">Presença de Pedro Santos</label>
+                                    <input type="checkbox" id="presenca-3" name="presenca-3" value="presente">
+                                </td>
+                                <td>
+                                    <label for="desempenho-3" class="texto-leitor">Desempenho de Pedro Santos</label>
+                                    <input type="number" id="desempenho-3" name="desempenho-3" step="1" min="0" max="70">
+                                </td>
+                                <td>
+                                    <label for="resultado-3" class="texto-leitor">Resultado de Pedro Santos</label>
+                                    <select id="resultado-3" name="resultado-3">
+                                        <option value="">Pendente</option>
+                                        <option value="aprovado">Aprovado</option>
+                                        <option value="segunda-fase">2ª fase</option>
+                                        <option value="reprovado">Não aprovado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="atleta.html">Mateus Oliveira</a></th>
+                                <td>17</td>
+                                <td>Atacante</td>
+                                <td>—</td>
+                                <td>
+                                    <label for="presenca-4" class="texto-leitor">Presença de Mateus Oliveira</label>
+                                    <input type="checkbox" id="presenca-4" name="presenca-4" value="presente">
+                                </td>
+                                <td>
+                                    <label for="desempenho-4" class="texto-leitor">Desempenho de Mateus Oliveira</label>
+                                    <input type="number" id="desempenho-4" name="desempenho-4" step="1" min="0" max="70">
+                                </td>
+                                <td>
+                                    <label for="resultado-4" class="texto-leitor">Resultado de Mateus Oliveira</label>
+                                    <select id="resultado-4" name="resultado-4">
+                                        <option value="">Pendente</option>
+                                        <option value="aprovado">Aprovado</option>
+                                        <option value="segunda-fase">2ª fase</option>
+                                        <option value="reprovado">Não aprovado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <p class="texto-apoio">Mostrando 4 de 28 inscritos.</p>
 

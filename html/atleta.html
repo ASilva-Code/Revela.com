@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do atleta Lucas Andrade visto pelo olheiro.">
     <title>Lucas Andrade | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
@@ -10,12 +11,14 @@
 </head>
 <body class="pagina-perfil">
 
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
+
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
         <nav class="menu-principal" aria-label="Menu principal">
             <ul>
                 <li><a href="main-olheiro.html">Início</a></li>
-                <li><a href="talentos.html" aria-current="page">Talentos</a></li>
+                <li><a href="talentos.html" aria-current="true">Talentos</a></li>
                 <li><a href="peneiras-olheiro.html">Peneiras</a></li>
                 <li><a href="mensagens-olheiro.html">Mensagens</a></li>
                 <li><a href="perfil-olheiro.html">Perfil</a></li>
@@ -24,9 +27,11 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <p><a href="talentos.html" class="link-voltar">&larr; Voltar para talentos</a></p>
+
+        <p class="aviso-demo">Versão de demonstração: sem banco de dados, todos os atletas abrem este perfil de exemplo.</p>
 
         <section class="perfil-topo card">
             <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Lucas Andrade" class="foto-perfil" width="120" height="120">
@@ -64,7 +69,7 @@
             <p class="texto-apoio">Média de 4 avaliações de 3 olheiros diferentes.</p>
         </section>
 
-        <section class="perfil-atributos card" aria-labelledby="titulo-atributos">
+        <section class="card" aria-labelledby="titulo-atributos">
             <h2 id="titulo-atributos">Atributos — Futebol</h2>
 
             <ul class="lista-atributos">
@@ -101,7 +106,7 @@
             </ul>
         </section>
 
-        <section class="perfil-dados card" aria-labelledby="titulo-dados">
+        <section class="card" aria-labelledby="titulo-dados">
             <h2 id="titulo-dados">Dados esportivos</h2>
 
             <dl class="lista-dados">
@@ -120,13 +125,13 @@
             </dl>
         </section>
 
-        <section class="card convite" aria-labelledby="titulo-convite">
+        <section class="card" aria-labelledby="titulo-convite">
             <h2 id="titulo-convite">Convidar para uma peneira</h2>
 
-            <form id="form-convite" action="mensagens-olheiro.html">
+            <form action="mensagens-olheiro.html" method="get">
                 <div class="campo">
                     <label for="convite-peneira">Peneira</label>
-                    <select id="convite-peneira" required>
+                    <select id="convite-peneira" name="peneira" required>
                         <option value="">Selecione</option>
                         <option value="sub17">Peneira Sub-17 — 28/11/2026</option>
                         <option value="sub15">Peneira Sub-15 — 19/12/2026</option>
@@ -135,53 +140,55 @@
 
                 <div class="campo">
                     <label for="convite-mensagem">Mensagem (opcional)</label>
-                    <textarea id="convite-mensagem" rows="3" placeholder="Conte por que você quer vê-lo jogar."></textarea>
+                    <textarea id="convite-mensagem" name="mensagem" maxlength="500" rows="3" placeholder="Conte por que você quer vê-lo jogar."></textarea>
                 </div>
 
                 <button type="submit" class="botao botao-primario">Enviar convite</button>
             </form>
         </section>
 
-        <section class="perfil-historico card" aria-labelledby="titulo-historico">
+        <section class="card" aria-labelledby="titulo-historico">
             <h2 id="titulo-historico">Histórico de peneiras</h2>
 
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th scope="col">Peneira</th>
-                        <th scope="col">Clube</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Desempenho</th>
-                        <th scope="col">Resultado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Peneira Sub-17</td>
-                        <td>Clube Atlético Aurora</td>
-                        <td><time datetime="2026-10-18">18/10/2026</time></td>
-                        <td>65</td>
-                        <td><span class="status status-aprovado">Aprovado para 2ª fase</span></td>
-                    </tr>
-                    <tr>
-                        <td>Avaliação aberta Sub-15</td>
-                        <td>Esporte Clube Horizonte</td>
-                        <td><time datetime="2026-09-02">02/09/2026</time></td>
-                        <td>63</td>
-                        <td><span class="status status-analise">Em análise</span></td>
-                    </tr>
-                    <tr>
-                        <td>Seletiva regional</td>
-                        <td>Associação Esportiva Ribeirão</td>
-                        <td><time datetime="2026-05-20">20/05/2026</time></td>
-                        <td>59</td>
-                        <td><span class="status status-reprovado">Não aprovado</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabela-rolagem" role="region" tabindex="0" aria-labelledby="titulo-historico">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th scope="col">Peneira</th>
+                            <th scope="col">Clube</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Desempenho</th>
+                            <th scope="col">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Peneira Sub-17</th>
+                            <td>Clube Atlético Aurora</td>
+                            <td><time datetime="2026-10-18">18/10/2026</time></td>
+                            <td>65</td>
+                            <td><span class="status status-aprovado">Aprovado para 2ª fase</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Avaliação aberta Sub-15</th>
+                            <td>Esporte Clube Horizonte</td>
+                            <td><time datetime="2026-09-02">02/09/2026</time></td>
+                            <td>63</td>
+                            <td><span class="status status-analise">Em análise</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Seletiva regional</th>
+                            <td>Associação Esportiva Ribeirão</td>
+                            <td><time datetime="2026-05-20">20/05/2026</time></td>
+                            <td>59</td>
+                            <td><span class="status status-reprovado">Não aprovado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section class="perfil-galeria card" aria-labelledby="titulo-galeria">
+        <section class="card" aria-labelledby="titulo-galeria">
             <h2 id="titulo-galeria">Fotos</h2>
 
             <div class="galeria">

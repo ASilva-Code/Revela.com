@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete seu cadastro de olheiro no Revela.com.">
     <title>Cadastro de olheiro | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
@@ -10,14 +11,18 @@
 </head>
 <body class="pagina-formulario">
 
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
+
     <header class="cabecalho-simples">
-        <p class="logo">Revela.com</p>
+        <a href="login.html" class="logo">Revela.com</a>
     </header>
 
-    <main class="formulario-conteudo">
+    <main id="conteudo" class="formulario-conteudo">
 
-        <h1>Complete seu cadastro</h1>
-        <p class="texto-apoio">Seu vínculo com o clube aparece no seu perfil e dá mais confiança aos atletas.</p>
+        <header>
+            <h1>Complete seu cadastro</h1>
+            <p class="texto-apoio">Seu vínculo com o clube aparece no seu perfil e dá mais confiança aos atletas.</p>
+        </header>
 
         <nav class="seletor-tipo" aria-label="Tipo de conta">
             <h2>Tipo de conta</h2>
@@ -27,19 +32,19 @@
             </ul>
         </nav>
 
-        <form id="form-olheiro" class="card-formulario" action="main-olheiro.html">
+        <form class="card-formulario" action="main-olheiro.html" method="get">
 
             <fieldset class="grupo-campos">
                 <legend>Vínculo profissional</legend>
 
                 <div class="campo">
                     <label for="clube">Clube ou time vinculado</label>
-                    <input type="text" id="clube" placeholder="Ex.: Esporte Clube Exemplo" required>
+                    <input type="text" id="clube" name="clube" maxlength="100" autocomplete="organization" placeholder="Ex.: Esporte Clube Exemplo" required>
                 </div>
 
                 <div class="campo">
                     <label for="cargo">Cargo</label>
-                    <select id="cargo" required>
+                    <select id="cargo" name="cargo" required>
                         <option value="">Selecione</option>
                         <option value="olheiro">Olheiro</option>
                         <option value="coordenador">Coordenador das categorias de base</option>
@@ -51,7 +56,7 @@
 
                 <div class="campo">
                     <label for="experiencia">Tempo de experiência</label>
-                    <select id="experiencia" required>
+                    <select id="experiencia" name="experiencia" required>
                         <option value="">Selecione</option>
                         <option value="0">Menos de 1 ano</option>
                         <option value="1">1 a 3 anos</option>
@@ -62,24 +67,24 @@
 
                 <div class="campo">
                     <label for="email-clube">E-mail profissional (opcional)</label>
-                    <input type="email" id="email-clube" placeholder="nome@clube.com.br">
+                    <input type="email" id="email-clube" maxlength="254" autocomplete="work email" placeholder="nome@clube.com.br">
                 </div>
             </fieldset>
 
-            <fieldset class="grupo-campos">
+            <fieldset class="grupo-campos" aria-describedby="dica-esportes">
                 <legend>Esportes que você avalia</legend>
-                <p class="dica-campo">Marque um ou mais.</p>
+                <p class="dica-campo" id="dica-esportes">Marque um ou mais.</p>
 
                 <div class="opcao-check">
-                    <input type="checkbox" id="esporte-futebol" value="futebol">
+                    <input type="checkbox" id="esporte-futebol" name="esportes" value="futebol">
                     <label for="esporte-futebol">Futebol</label>
                 </div>
                 <div class="opcao-check">
-                    <input type="checkbox" id="esporte-volei" value="volei">
+                    <input type="checkbox" id="esporte-volei" name="esportes" value="volei">
                     <label for="esporte-volei">Vôlei</label>
                 </div>
                 <div class="opcao-check">
-                    <input type="checkbox" id="esporte-basquete" value="basquete">
+                    <input type="checkbox" id="esporte-basquete" name="esportes" value="basquete">
                     <label for="esporte-basquete">Basquete</label>
                 </div>
             </fieldset>
@@ -89,7 +94,7 @@
 
                 <div class="campo">
                     <label for="estado">Estado</label>
-                    <select id="estado" required>
+                    <select id="estado" name="estado" autocomplete="address-level1" required>
                         <option value="">Selecione</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -123,7 +128,7 @@
 
                 <div class="campo">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" autocomplete="address-level2" required>
+                    <input type="text" id="cidade" name="cidade" maxlength="80" autocomplete="address-level2" required>
                 </div>
             </fieldset>
 

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do olheiro com vínculo, atividade e últimas avaliações.">
     <title>Meu perfil | Revela.com</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/telas.css">
 </head>
 <body class="pagina-perfil">
+
+    <a href="#conteudo" class="link-pular">Pular para o conteúdo</a>
 
     <header class="cabecalho">
         <a href="main-olheiro.html" class="logo">Revela.com</a>
@@ -24,24 +27,25 @@
         </nav>
     </header>
 
-    <main class="conteudo">
+    <main id="conteudo" class="conteudo">
 
         <section class="perfil-topo card">
-            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Rafael Moura" class="foto-perfil" id="foto-perfil" width="120" height="120">
+            <img src="../img/avatar-padrao.svg" alt="Foto de perfil de Rafael Moura" class="foto-perfil" width="120" height="120">
 
             <div class="perfil-identificacao">
-                <h1 id="perfil-nome">Rafael Moura</h1>
-                <p class="texto-apoio"><span id="perfil-cargo">Olheiro</span> · <span id="perfil-clube">Clube Atlético Aurora</span></p>
-                <p class="texto-apoio">Região de atuação: <span id="perfil-regiao">Campinas, SP</span></p>
+                <h1>Rafael Moura</h1>
+                <p class="texto-apoio">Olheiro · Clube Atlético Aurora</p>
+                <p class="texto-apoio">Região de atuação: Campinas, SP</p>
                 <ul class="lista-etiquetas" aria-label="Esportes que avalia">
                     <li class="etiqueta">Futebol</li>
                 </ul>
                 <p class="selo-verificado">Vínculo com o clube verificado</p>
             </div>
 
-            <form class="form-foto" action="perfil-olheiro.html">
+            <form class="form-foto" action="perfil-olheiro.html" method="get">
                 <label for="trocar-foto" class="botao botao-secundario">Trocar foto</label>
-                <input type="file" id="trocar-foto" accept="image/*">
+                <input type="file" id="trocar-foto" name="foto" accept="image/png, image/jpeg, image/webp" required>
+                <button type="submit" class="botao botao-primario">Salvar foto</button>
             </form>
         </section>
 
@@ -76,40 +80,42 @@
         <section class="card" aria-labelledby="titulo-ultimas">
             <h2 id="titulo-ultimas">Últimas avaliações</h2>
 
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th scope="col">Atleta</th>
-                        <th scope="col">Esporte</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">OVR</th>
-                        <th scope="col">Potencial</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="atleta.html">Lucas Andrade</a></td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-10-18">18/10/2026</time></td>
-                        <td>65</td>
-                        <td>88</td>
-                    </tr>
-                    <tr>
-                        <td><a href="atleta.html">Caio Ribeiro</a></td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-10-18">18/10/2026</time></td>
-                        <td>61</td>
-                        <td>82</td>
-                    </tr>
-                    <tr>
-                        <td><a href="atleta.html">João Vitor Alves</a></td>
-                        <td>Futebol</td>
-                        <td><time datetime="2026-09-27">27/09/2026</time></td>
-                        <td>67</td>
-                        <td>90</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabela-rolagem" role="region" tabindex="0" aria-labelledby="titulo-ultimas">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th scope="col">Atleta</th>
+                            <th scope="col">Esporte</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">OVR</th>
+                            <th scope="col">Potencial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a href="atleta.html">Lucas Andrade</a></th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-10-18">18/10/2026</time></td>
+                            <td>65</td>
+                            <td>88</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="atleta.html">Caio Ribeiro</a></th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-10-18">18/10/2026</time></td>
+                            <td>61</td>
+                            <td>82</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="atleta.html">João Vitor Alves</a></th>
+                            <td>Futebol</td>
+                            <td><time datetime="2026-09-27">27/09/2026</time></td>
+                            <td>67</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>
